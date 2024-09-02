@@ -5,7 +5,7 @@
 
 This repository contains the source code for Nicolas Gonzalez's professional portfolio website. The portfolio showcases Nicolas's skills, experience, and projects in front-end development and video game testing.
 
-Visit the live site: [Nicolas Gonzalez Portfolio](https://your-portfolio-url.com)
+Visit the live site: [Nicolas Gonzalez Portfolio](https://nicolasgz96.github.uy/Cv-Portfolio)
 
 ## Features
 
