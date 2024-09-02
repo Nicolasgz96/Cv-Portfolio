@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Desarrollador Front-end</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="content-wrapper">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">
+                                <i class="fas fa-home"></i>
+                                <span data-translate="home">Inicio</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">
+                                <i class="fas fa-user"></i>
+                                <span data-translate="about">Sobre mí</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">
+                                <i class="fas fa-code"></i>
+                                <span data-translate="skills">Habilidades</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#soft-skills">
+                                <i class="fas fa-brain"></i>
+                                <span data-translate="soft-skills">Habilidades Blandas</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#languages" id="languages-link">
+                                <i class="fas fa-language"></i>
+                                <span data-translate="languages">Idiomas</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">
+                                <i class="fas fa-project-diagram"></i>
+                                <span data-translate="projects">Proyectos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">
+                                <i class="fas fa-envelope"></i>
+                                <span data-translate="contact">Contacto</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <button id="languageToggle" class="btn btn-outline-secondary mt-3">
+                        <i class="fas fa-language"></i> <span>EN</span>
+                    </button>
+                </div>
+            </nav>
+            </div>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <section id="home" class="section">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h1 class="mb-4" data-translate="greeting">Hola, soy Nicolas Gonzalez</h1>
+                            <h2 class="mb-4 typing" id="typing-text" data-translate="developer">Desarrollador Front-end</h2>
+                            <p class="lead mb-4" data-translate="passion">Apasionado por crear experiencias web increíbles y funcionales.</p>
+                            <a href="assets/cv/cv_nicolas gonzalez.docx.pdf" download class="btn btn-primary btn-lg download-cv" data-translate="download-cv">
+                                <i class="fas fa-download"></i> Descargar CV
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="profile-image-container">
+                                <img src="assets/img/nico.jpg" alt="Foto de perfil" class="profile-image">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="about" class="section">
+                    <div class="container">
+                        <h2 class="section-title" data-translate="about-me">Sobre mí</h2>
+                        <div class="about-content">
+                            <div class="row align-items-center">
+                                <div class="col-md-4">
+                                    <div class="about-image-container">
+                                        <img src="assets/img/about.png" alt="Imagen representativa" class="about-image">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="about-text">
+                                        <p data-translate="about-description">¡Hola! Soy Nicolás González, un apasionado y perfeccionista Analista de Calidad de Juegos con experiencia en optimizar el mejor rendimiento y una buena experiencia del usuario en los juegos. Durante los años, he tenido la oportunidad de trabajar en grandes proyectos de juegos como Suicide Squad: Kill the Justice League y Back 4 Blood, donde obtuve experiencia en metodologías de pruebas rigurosas, informes de errores y pruebas de regresión.
+                
+                                        Con experiencia en herramientas de desarrollo de juegos, trabajando en plataformas que incluyen Microsoft Xbox, PlayStation 5 y Nintendo Switch, y con un buen conocimiento de HTML, CSS, JavaScript y React Native, traigo un sólido telón de fondo de habilidades al equipo. Pero no soy solo un cerebrito técnico; también puedo relacionarme bien en inglés y español, lo que me convierte en un activo muy versátil capaz de triunfar en cualquier entorno multicultural.
+                
+                                        Además de las habilidades técnicas, soy considerado accesible, ordenado y metódico. Es mi naturaleza hacer que cada proyecto en el que esté involucrado, ya sea a través de mi papel como jefe de TechKnowledge o en los equipos de documentación, se complete en una forma inmejorable. Por lo tanto, espero que haya más y más oportunidades con estas aplicaciones para que pueda seguir creciendo más fuerte dentro de la industria de la tecnología. Sígueme para descubrir cómo puedo ser útil en tu siguiente proyecto.</p>
+                                        <div class="about-highlights">
+                                            <div class="highlight-item">
+                                                <i class="fas fa-code"></i>
+                                                <span data-translate="highlight-1">Desarrollador Front-end apasionado</span>
+                                            </div>
+                                            <div class="highlight-item">
+                                                <i class="fas fa-gamepad"></i>
+                                                <span data-translate="highlight-2">Tester de videojuegos experimentado</span>
+                                            </div>
+                                            <div class="highlight-item">
+                                                <i class="fas fa-globe"></i>
+                                                <span data-translate="highlight-3">Bilingüe en español e inglés</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills" class="section">
+                    <h2 class="section-title" data-translate="technical-skills">Habilidades Técnicas</h2>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <h3>HTML5</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <h3>CSS3</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <h3>JavaScript</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-bootstrap"></i>
+                                <h3>Bootstrap</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-jira"></i>
+                                <h3>Jira</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-gamepad"></i>
+                                <h3 data-translate="videogame">Videojuegos</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item highlight-skill">
+                                <i class="fas fa-bug"></i>
+                                <h3 data-translate="tester">Tester de videojuegos</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-confluence"></i>
+                                <h3>Confluence</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-file-excel"></i>
+                                <h3>Excel</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-vial"></i>
+                                <h3>TestRail</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <h3>GDK/SDK</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt"></i>
+                                <h3>Git</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="mt-5 section-title" data-translate="gaming-platforms">Plataformas de Juegos</h2>
+                    <div class="row">
+                        <div class="col-md-2 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-desktop"></i>
+                                <h3>PC</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-playstation"></i>
+                                <h3>PlayStation</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="skill-item">
+                                <i class="fab fa-xbox"></i>
+                                <h3>Xbox</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-gamepad"></i>
+                                <h3>Switch</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h3 data-translate="mobile">Móvil</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="soft-skills" class="section">
+                    <h2 class="section-title" data-translate="soft-skills">Habilidades Blandas</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-brain"></i>
+                                <h3 data-translate="open-minded">Open-minded</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-users"></i>
+                                <h3 data-translate="team-oriented">Team-oriented</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-handshake"></i>
+                                <h3 data-translate="approachable">Approachable</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-heart"></i>
+                                <h3 data-translate="understanding">Understanding</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-comments"></i>
+                                <h3 data-translate="communication">Communication</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="languages" class="section">
+                    <h2 class="section-title" data-translate="languages">Idiomas</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-language"></i>
+                                <h3><span data-translate="spanish">Español</span> - <span data-translate="native">Nivel nativo</span></h3>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="skill-item">
+                                <i class="fas fa-language"></i>
+                                <h3><span data-translate="english">Inglés</span> - <span data-translate="native">Nivel nativo</span></h3>
+                            </div>
+                        </div>
+                    </section>
+    
+                    <section id="projects" class="section">
+                        <h2 class="section-title" data-translate="projects">Proyectos</h2>
+                        <div class="project-categories">
+                          <div class="category-card" data-category="web">
+                            <h3 data-translate="web-projects">Proyectos Web</h3>
+                            <div class="project-carousel" id="web-carousel"></div>
+                          </div>
+                          <div class="category-card" data-category="scripts">
+                            <h3 data-translate="script-projects">Scripts</h3>
+                            <div class="project-carousel" id="scripts-carousel"></div>
+                          </div>
+                          <div class="category-card" data-category="games">
+                            <h3 data-translate="game-projects">Proyectos de Juegos</h3>
+                            <div class="project-carousel" id="games-carousel"></div>
+                          </div>
+                        </div>
+                      </section>
+    
+                    <section id="contact" class="section">
+                        <div class="contact-container">
+                            <h2 class="contact-title section-title" data-translate="contact">Contacto</h2>
+                            <form class="contact-form" novalidate>
+                                <div class="form-group">
+                                    <input type="text" id="name" name="name" required>
+                                    <label for="name" data-translate="name">Nombre</label>
+                                    <span class="error-message" data-translate="name-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="email">Email</label>
+                                    <span class="error-message" data-translate="email-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="message" name="message" rows="4" maxlength="3000" style="resize: none;" required></textarea>
+                                    <label for="message" data-translate="message">Mensaje</label>
+                                    <span class="error-message" data-translate="message-error"></span>
+                                    <div class="char-count"><span id="char-count">0</span>/3000</div>
+                                </div>
+                                <button type="submit" class="submit-btn" data-translate="send">
+                                    <i class="fas fa-paper-plane"></i> Enviar
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    
+        <button id="scrollToTop" class="btn btn-primary rounded-circle">
+            <i class="fas fa-arrow-up"></i>
+            <svg class="progress-ring" width="50" height="50">
+                <circle class="progress-ring__circle" stroke="white" stroke-width="4" fill="transparent" r="21" cx="25" cy="25"/>
+            </svg>
+        </button>
+    
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Nicolas Gonzalez</h5>
+                        <p data-translate="footer-dec">Desarrollador Front-end y Tester de Videojuegos</p>
+                        <p data-translate="footer-text">Todos los derechos reservados © 2024</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 data-translate="footer-link">Enlaces Rápidos</h5>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="footer-links">
+                                    <li data-translate="footer-link-home"><a href="#home">Inicio</a></li>
+                                    <li data-translate="footer-link-about"><a href="#about">Sobre Mí</a></li>
+                                    <li data-translate="footer-link-skills"><a href="#skills">Habilidades</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <ul class="footer-links">
+                                    <li data-translate="footer-link-projects"><a href="#projects">Proyectos</a></li>
+                                    <li data-translate="footer-link-contact"><a href="#contact">Contacto</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 data-translate="footer-contactme">Contactame</h5>
+                        <p><i class="fas fa-envelope"></i> 96.nicolasgonzalez@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +598 91 918 768</p>
+                        <div class="social-links">
+                            <a href="https://github.com/Nicolasgz96" target="_blank" rel="noopener noreferrer"  class="social-button">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/nicolás-gonzález-0565781b9/" target="_blank" rel="noopener noreferrer" class="social-button">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="mailto:96.nicolasgonzalez@gmail.com" class="social-button">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="module" src="js/main.js"></script>
+    </body>
+</html>
