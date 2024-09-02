@@ -1,8 +1,10 @@
+// Import necessary translations and functions
 import { translations } from './translations.js';
 import { validateInput } from './formValidation.js';
 import { loadProjects } from './projects.js';
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Get the DOM elements I'll need
   const sidebar = document.getElementById("sidebar");
   const body = document.body;
   const navLinks = sidebar.getElementsByClassName("nav-link");
@@ -15,14 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentLanguage = "es";
   let lastClickedLink = null;
 
+  // Configure the progress circle
   progressRing.style.strokeDasharray = `${circumference} ${circumference}`;
   progressRing.style.strokeDashoffset = circumference;
 
+  // Function to update the progress circle
   function setProgress(percent) {
     const offset = circumference - (percent / 100) * circumference;
     progressRing.style.strokeDashoffset = offset;
   }
 
+  // Handle scroll to show/hide the back-to-top button and update progress
   function handleScroll() {
     const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = window.scrollY;
@@ -41,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Update the active navigation link
   function updateActiveNavLink() {
     const isNavbarExpanded = sidebar.classList.contains('expanded');
     
@@ -77,12 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Update styles when the sidebar transition ends
   sidebar.addEventListener("transitionend", (e) => {
     if (e.propertyName === "width") {
       updateActiveNavLink();
     }
   });
 
+  // Function to expand/collapse the sidebar
   function toggleSidebar(expand) {
     if (expand) {
       sidebar.classList.add('expanded');
@@ -95,11 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   
+  // Expand/collapse the sidebar on mouse enter/leave
   sidebar.addEventListener("mouseenter", () => toggleSidebar(true));
   sidebar.addEventListener("mouseleave", () => toggleSidebar(false));
 
+  // Handle scroll
   window.addEventListener("scroll", handleScroll);
 
+  // Scroll to top when button is clicked
   scrollToTopBtn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
@@ -107,22 +118,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Configuration for typing effect
   let typingInterval;
   const typingElement = document.getElementById("typing-text");
   let phrases = [
-    "Desarrollador Front-end",
-    "Tester de Videojuegos",
-    "Creador de Experiencias Web",
+    "Front-end Developer",
+    "Video Game Tester",
+    "Web Experience Creator",
   ];
   let phraseIndex = 0;
   let letterIndex = 0;
   let currentPhrase = "";
   let isDeleting = false;
 
+  // Get the translated phrase
   function getTranslatedPhrase(phrase) {
     return translations[currentLanguage][phrase] || phrase;
   }
 
+  // Typing effect
   function typeEffect() {
     const translatedPhrase = getTranslatedPhrase(phrases[phraseIndex]);
 
@@ -154,12 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
     typingInterval = setTimeout(typeEffect, delta);
   }
 
+  // Start the typing effect
   typeEffect();
 
+  // Change language
   function changeLanguage() {
     currentLanguage = currentLanguage === "es" ? "en" : "es";
-    const buttonText = currentLanguage === "es" ? "EN" : "ES";
-    languageToggle.querySelector("span").textContent = buttonText;
+    languageToggle.querySelector("span").textContent = currentLanguage.toUpperCase();
 
     document.querySelectorAll("[data-translate]").forEach((element) => {
       const key = element.getAttribute("data-translate");
@@ -184,14 +199,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Actualizar las frases del efecto de escritura
+    // Update typing effect phrases
     phrases = [
-      "Desarrollador Front-end",
-      "Tester de Videojuegos",
-      "Creador de Experiencias Web",
+      "Front-end Developer",
+      "Video Game Tester",
+      "Web Experience Creator",
     ].map(phrase => getTranslatedPhrase(phrase));
 
-    // Reiniciar el efecto de escritura
+    // Restart typing effect
     clearTimeout(typingInterval);
     letterIndex = 0;
     isDeleting = false;
@@ -203,11 +218,13 @@ document.addEventListener("DOMContentLoaded", () => {
     lastClickedLink = null;
     updateActiveNavLink();
 
-    console.log(`Idioma cambiado a: ${currentLanguage}`);
+    console.log(`Language changed to: ${currentLanguage}`);
   }
 
+  // Add event listener for language change
   languageToggle.addEventListener("click", changeLanguage);
 
+  // Initialize translations
   function initializeTranslations() {
     document.querySelectorAll("[data-translate]").forEach((element) => {
       const key = element.getAttribute("data-translate");
@@ -219,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initializeTranslations();
 
+  // Set up intersection observer for animations
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -238,6 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(title);
   });
 
+  // Handle form validation
   const form = document.querySelector('.contact-form');
   const inputs = form.querySelectorAll('input, textarea');
 
@@ -252,8 +271,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (isValid) {
-      console.log('Formulario enviado');
-      // Aquí puedes añadir el código para enviar el formulario
+      console.log('Form submitted');
+      // Here I can add the code to send the form
     }
   });
 
@@ -263,6 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Handle character count for message
   const messageTextarea = document.getElementById('message');
   const charCount = document.getElementById('char-count');
 
@@ -276,16 +296,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  // Initialize project carousels
   function initCarousels() {
     const carousels = document.querySelectorAll('.project-carousel');
     carousels.forEach(carousel => {
       const items = carousel.querySelectorAll('.project-item');
       if (items.length === 0) {
-        console.log('No hay items en el carrusel:', carousel.id);
+        console.log('No items in carousel:', carousel.id);
         return;
       }
   
-      console.log('Inicializando carrusel:', carousel.id, 'con', items.length, 'items');
+      console.log('Initializing carousel:', carousel.id, 'with', items.length, 'items');
   
       const buttonsHtml = Array.from(items, () => {
         return `<span class="carousel-dot"></span>`;
@@ -336,17 +357,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Load projects and initialize carousels
   function loadAndInitProjects() {
     loadProjects().then(() => {
-      console.log('Proyectos cargados, inicializando carruseles...');
+      console.log('Projects loaded, initializing carousels...');
       initCarousels();
     }).catch(error => {
-      console.error('Error al cargar los proyectos:', error);
+      console.error('Error loading projects:', error);
     });
   }
 
   loadAndInitProjects();
 
+  // Handle click on navigation links
   function handleNavLinkClick(event) {
     const clickedLink = event.currentTarget;
     const sectionId = clickedLink.getAttribute("href").substring(1);
@@ -356,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lastClickedLink = clickedLink;
       updateActiveNavLink();
       
-      // Desplazamiento suave a la sección de idiomas
+      // Smooth scroll to languages section
       const languagesSection = document.getElementById("languages");
       if (languagesSection) {
         languagesSection.scrollIntoView({ behavior: "smooth" });
@@ -370,6 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener('click', handleNavLinkClick);
   });
 
+  // Initialize translations
   function initializeTranslations() {
     document.querySelectorAll("[data-translate]").forEach((element) => {
       const key = element.getAttribute("data-translate");

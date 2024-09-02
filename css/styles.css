@@ -1,3 +1,4 @@
+/* Define my color palette and transition duration for easy customization */
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
@@ -7,6 +8,7 @@
     --accent-color: #2980b9;
 }
 
+/* Set up the basic styles for the body */
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
@@ -14,6 +16,7 @@ body {
     padding-top: 40px;
 }
 
+/* Style the sidebar for easy navigation */
 .sidebar {
     height: 100vh;
     position: fixed;
@@ -27,10 +30,12 @@ body {
     z-index: 1000;
 }
 
+/* Expand the sidebar on hover for better visibility */
 .sidebar:hover {
     width: 240px;
 }
 
+/* Hide scrollbar but keep functionality */
 .sidebar-sticky {
     height: 100%;
     overflow-y: auto;
@@ -42,6 +47,7 @@ body {
     display: none;
 }
 
+/* Style the navigation links */
 .nav-link {
     color: var(--text-color);
     transition: all var(--transition-duration) ease;
@@ -56,6 +62,7 @@ body {
     white-space: nowrap;
 }
 
+/* Style the icons in the navigation links */
 .nav-link i {
     font-size: 1.5rem;
     min-width: 25px;
@@ -63,6 +70,7 @@ body {
     margin-right: 15px;
 }
 
+/* Hide the text in the navigation links when sidebar is collapsed */
 .nav-link span {
     margin-left: 0;
     opacity: 0;
@@ -70,31 +78,37 @@ body {
     font-size: 0.9rem;
 }
 
+/* Show the text in the navigation links when sidebar is expanded */
 .sidebar:hover .nav-link span {
     opacity: 1;
 }
 
+/* Style the active and hovered navigation links */
 .nav-link:hover,
 .nav-link.active {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
+/* Style for active link when not hovered */
 .nav-link.active:not(:hover) {
     background-color: transparent;
     color: var(--secondary-color);
 }
 
+/* Style the main content area */
 main {
     margin-left: 80px;
     padding: 40px;
     transition: margin-left var(--transition-duration) ease;
 }
 
+/* Adjust main content when sidebar is expanded */
 .sidebar:hover ~ main {
     margin-left: 240px;
 }
 
+/* Style for each section */
 .section {
     margin-bottom: 80px;
     opacity: 0;
@@ -102,11 +116,13 @@ main {
     transition: all var(--transition-duration) ease;
 }
 
+/* Animation for sections */
 .section.animate {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Style for skill items */
 .skill-item {
     text-align: center;
     padding: 20px;
@@ -116,22 +132,26 @@ main {
     height: 100%;
 }
 
+/* Hover effect for skill items */
 .skill-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Style for skill icons */
 .skill-item i {
     font-size: 3rem;
     margin-bottom: 10px;
     color: var(--secondary-color);
 }
 
+/* Style for skill titles */
 .skill-item h3 {
     font-size: 1.2rem;
     margin-bottom: 0;
 }
 
+/* Style for profile image container */
 .profile-image-container {
     position: relative;
     width: 100%;
@@ -139,6 +159,7 @@ main {
     margin: 40px auto;
 }
 
+/* Style for profile image */
 .profile-image {
     width: 100%;
     height: auto;
@@ -147,11 +168,13 @@ main {
     transition: all 0.3s ease;
 }
 
+/* Hover effect for profile image */
 .profile-image:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
 }
 
+/* Style for scroll to top button */
 #scrollToTop {
     position: fixed;
     bottom: 20px;
@@ -169,15 +192,18 @@ main {
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect for scroll to top button */
 #scrollToTop:hover {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
 
+/* Style for scroll to top button icon */
 #scrollToTop i {
     font-size: 1.5rem;
 }
 
+/* Style for progress ring */
 .progress-ring {
     position: absolute;
     top: 0;
@@ -186,6 +212,7 @@ main {
     height: 100%;
 }
 
+/* Style for progress ring circle */
 .progress-ring__circle {
     transition: stroke-dashoffset 0.35s;
     transform: rotate(-90deg);
@@ -195,41 +222,47 @@ main {
     stroke-width: 4;
 }
 
+/* Style for typing effect */
 .typing::after {
     content: '|';
     animation: blink 0.7s infinite;
 }
 
+/* Keyframes for blinking cursor */
 @keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
 
+/* Style for language toggle button */
 #languageToggle {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Alinea el contenido a la izquierda */
-    padding: 0.75rem 1rem; /* Ajusta el padding para que coincida con los íconos */
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
     border: none;
     background-color: transparent;
     color: var(--text-color);
     transition: all 0.3s ease;
     width: 100%;
-    text-align: left; /* Alinea el texto a la izquierda */
-    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+    text-align: left;
+    box-sizing: border-box;
 }
 
+/* Hover effect for language toggle button */
 #languageToggle:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
+/* Style for language toggle button icon */
 #languageToggle i {
     font-size: 1.25rem;
     margin-right: 10px;
 }
 
+/* Style for language toggle button text */
 #languageToggle span {
     display: inline-block;
     transition: opacity 0.3s ease;
@@ -237,35 +270,41 @@ main {
     margin-left: 2px;
 }
 
+/* Show language toggle button text when sidebar is expanded */
 .sidebar:hover #languageToggle span {
     opacity: 1;
 }
 
+/* Style for language toggle button when sidebar is collapsed */
 .sidebar.collapsed #languageToggle {
-    justify-content: center; /* Centra el contenido cuando está colapsado */
+    justify-content: center;
     padding: 0.5rem;
     width: 40px;
     height: 40px;
-    background-color: transparent; /* Asegura que el fondo sea transparente */
-    color: var(--text-color); /* Asegura que el color del texto sea el correcto */
-    margin: 10px auto; /* Centra el botón horizontalmente */
+    background-color: transparent;
+    color: var(--text-color);
+    margin: 10px auto;
 }
 
+/* Hover effect for language toggle button when sidebar is collapsed */
 .sidebar.collapsed #languageToggle:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
 }
 
+/* Style for language toggle button icon when sidebar is collapsed */
 .sidebar.collapsed #languageToggle i {
     margin-right: 5px;
 }
 
+/* Style for language toggle button text when sidebar is collapsed */
 .sidebar.collapsed #languageToggle span {
     display: inline-block;
     opacity: 1;
     margin-left: 5px;
 }
 
+/* Style for contact form container */
 .contact-container {
     max-width: 600px;
     margin: 0 auto;
@@ -275,17 +314,20 @@ main {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Style for contact form title */
 .contact-title {
     text-align: center;
     margin-bottom: 30px;
     color: var(--secondary-color);
 }
 
+/* Style for form groups */
 .form-group {
     position: relative;
     margin-bottom: 30px;
 }
 
+/* Style for form inputs and textareas */
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -299,6 +341,7 @@ main {
     transition: 0.3s;
 }
 
+/* Style for form labels */
 .form-group label {
     position: absolute;
     top: 10px;
@@ -310,6 +353,7 @@ main {
     opacity: 0.7;
 }
 
+/* Style for form labels when input is focused or valid */
 .form-group input:focus ~ label,
 .form-group input:valid ~ label,
 .form-group textarea:focus ~ label,
@@ -321,12 +365,14 @@ main {
     opacity: 1;
 }
 
+/* Style for form inputs and textareas when focused */
 .form-group input:focus,
 .form-group textarea:focus {
     border-bottom: 2px solid var(--text-color);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Style for form textareas */
 .form-group textarea {
     min-height: 120px;
     max-height: 200px;
@@ -335,6 +381,7 @@ main {
     overflow-y: auto;
 }
 
+/* Style for character count */
 .char-count {
     font-size: 12px;
     color: var(--text-color);
@@ -342,6 +389,7 @@ main {
     margin-top: 5px;
 }
 
+/* Style for contact form submit button */
 .contact-form button {
     display: block;
     width: 100%;
@@ -355,11 +403,13 @@ main {
     transition: 0.3s;
 }
 
+/* Hover effect for contact form submit button */
 .contact-form button:hover {
     background-color: var(--text-color);
     color: var(--secondary-color);
 }
 
+/* Style for error messages */
 .error-message {
     color: #e74c3c;
     font-size: 12px;
@@ -367,16 +417,20 @@ main {
     display: none;
 }
 
+/* Show error message when form group has error */
 .form-group.error .error-message {
     display: block;
 }
 
+/* Style for form inputs and textareas when form group has error */
 .form-group.error input,
 .form-group.error textarea {
     border-bottom: 2px solid #e74c3c;
 }
 
+/* Media query for mobile devices */
 @media (max-width: 768px) {
+    /* Adjust sidebar for mobile */
     .sidebar {
         height: auto;
         width: 100%;
@@ -389,6 +443,7 @@ main {
         width: 100%;
     }
 
+    /* Adjust navigation for mobile */
     .nav {
         flex-direction: row;
         justify-content: space-around;
@@ -411,6 +466,7 @@ main {
         display: none;
     }
 
+    /* Adjust main content for mobile */
     main {
         margin-left: 0;
         padding: 20px;
@@ -434,6 +490,7 @@ main {
     }
 }
 
+/* Style for footer */
 .footer {
     background-color: var(--primary-color);
     color: var(--text-color);
@@ -441,12 +498,14 @@ main {
     margin-top: 60px;
 }
 
+/* Style for footer headings */
 .footer h5 {
     color: var(--secondary-color);
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
 
+/* Style for footer links */
 .footer-links {
     list-style: none;
     padding: 0;
@@ -464,16 +523,19 @@ main {
     font-size: 0.9rem;
 }
 
+/* Hover effect for footer links */
 .footer-links a:hover {
     color: var(--secondary-color);
 }
 
+/* Style for social links */
 .social-links {
     display: flex;
     gap: 10px;
     margin-top: 15px;
 }
 
+/* Style for social buttons */
 .social-button {
     display: flex;
     align-items: center;
@@ -487,23 +549,27 @@ main {
     transition: all 0.3s ease;
 }
 
+/* Hover effect for social buttons */
 .social-button:hover {
     background-color: var(--text-color);
     color: var(--primary-color);
     transform: translateY(-3px);
 }
 
+/* Style for footer paragraphs */
 .footer p {
     font-size: 0.9rem;
     margin-bottom: 8px;
 }
 
+/* Media query for footer on mobile devices */
 @media (max-width: 768px) {
     .footer .col-md-4 {
         margin-bottom: 20px;
     }
 }
 
+/* Style for section titles */
 .section-title {
     text-align: center;
     margin-bottom: 40px;
@@ -515,11 +581,13 @@ main {
     transition: opacity 0.5s, transform 0.5s;
 }
 
+/* Animation for section titles */
 .section-title.animate {
     opacity: 1;
     transform: translateY(0);
 }
 
+/* Underline effect for section titles */
 .section-title::after {
     content: '';
     display: block;
@@ -529,6 +597,7 @@ main {
     margin: 10px auto 0;
 }
 
+/* Style for about section content */
 .about-content {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
@@ -536,6 +605,7 @@ main {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Style for about section image container */
 .about-image-container {
     position: relative;
     width: 100%;
@@ -545,6 +615,7 @@ main {
     box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
 }
 
+/* Style for about section image */
 .about-image {
     position: absolute;
     top: 0;
@@ -555,16 +626,19 @@ main {
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for about section image */
 .about-image-container:hover .about-image {
     transform: scale(1.05);
 }
 
+/* Style for about section text */
 .about-text {
     color: var(--text-color);
     font-size: 1.1rem;
     line-height: 1.6;
 }
 
+/* Style for about section highlights */
 .about-highlights {
     margin-top: 30px;
     display: flex;
@@ -572,6 +646,7 @@ main {
     gap: 20px;
 }
 
+/* Style for highlight items */
 .highlight-item {
     display: flex;
     align-items: center;
@@ -581,51 +656,60 @@ main {
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect for highlight items */
 .highlight-item:hover {
     background-color: rgba(52, 152, 219, 0.2);
 }
 
+/* Style for highlight item icons */
 .highlight-item i {
     font-size: 1.2rem;
     color: var(--secondary-color);
     margin-right: 10px;
 }
 
+/* Style for highlight item text */
 .highlight-item span {
     font-size: 0.9rem;
     color: var(--text-color);
 }
 
+/* Media query for about section on mobile devices */
 @media (max-width: 768px) {
     .about-image-container {
         margin-bottom: 30px;
     }
 }
 
+/* Style for project categories */
 .project-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
+/* Style for category cards */
 .category-card {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 20px;
 }
 
+/* Style for project carousel */
 .project-carousel {
     position: relative;
     overflow: hidden;
     height: 400px;
-    padding-bottom: 40px; /* Añade espacio para los puntos */
+    padding-bottom: 40px; /* Add space for dots */
 }
 
+/* Style for slides container */
 .slides-container {
     height: 100%;
     width: 100%;
 }
 
+/* Style for project slides */
 .project-slide {
     position: absolute;
     top: 0;
@@ -642,10 +726,12 @@ main {
     padding: 20px;
 }
 
+/* Style for active project slide */
 .project-slide.active {
     opacity: 1;
 }
 
+/* Style for project images */
 .project-image {
     max-width: 100%;
     max-height: 200px;
@@ -653,6 +739,7 @@ main {
     margin-bottom: 10px;
 }
 
+/* Style for carousel buttons */
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -667,10 +754,12 @@ main {
     opacity: 0;
 }
 
+/* Hover effect for carousel buttons */
 .carousel-button:hover {
     color: var(--text-color);
 }
 
+/* Position carousel buttons */
 .carousel-button.prev {
     left: 10px;
 }
@@ -679,10 +768,12 @@ main {
     right: 10px;
 }
 
+/* Show carousel buttons on hover */
 .project-carousel:hover .carousel-button {
     opacity: 1;
 }
 
+/* Style for carousel indicators */
 .carousel-indicators {
     position: absolute;
     bottom: 10px;
@@ -691,27 +782,31 @@ main {
     display: flex;
     justify-content: center;
     gap: 10px;
-    opacity: 1; /* Cambiado de 0 a 1 para que siempre sean visibles */
+    opacity: 1; /* Changed from 0 to 1 for always visible */
     transition: opacity 0.3s;
 }
 
+/* Show carousel indicators on hover */
 .project-carousel:hover .carousel-indicators {
     opacity: 1;
 }
 
+/* Style for carousel dots */
 .carousel-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: var(--secondary-color); /* Cambiado para mejor visibilidad */
+    background-color: var(--secondary-color); /* Changed for better visibility */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
+/* Style for active carousel dot */
 .carousel-dot.active {
     background-color: var(--text-color);
 }
 
+/* Style for download CV button */
 .download-cv {
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -728,6 +823,7 @@ main {
     overflow: hidden;
 }
 
+/* Shine effect for download CV button */
 .download-cv:before {
     content: "";
     position: absolute;
@@ -744,21 +840,25 @@ main {
     transition: all 0.4s ease;
 }
 
+/* Animate shine effect on hover */
 .download-cv:hover:before {
     left: 100%;
 }
 
+/* Hover effect for download CV button */
 .download-cv:hover {
     background-color: var(--accent-color);
     transform: translateY(-3px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Active state for download CV button */
 .download-cv:active {
     transform: translateY(-1px);
     box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Style for download CV button icon */
 .download-cv i {
     margin-right: 8px;
 }
