@@ -125,6 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "Front-end Developer",
     "Video Game Tester",
     "Web Experience Creator",
+    "cook",
+    "confectioner"
   ];
   let phraseIndex = 0;
   let letterIndex = 0;
@@ -139,34 +141,34 @@ document.addEventListener("DOMContentLoaded", () => {
   // Typing effect
   function typeEffect() {
     const translatedPhrase = getTranslatedPhrase(phrases[phraseIndex]);
-
+  
     if (isDeleting) {
-      currentPhrase = translatedPhrase.substring(0, letterIndex - 1);
-      letterIndex--;
-    } else {
-      currentPhrase = translatedPhrase.substring(0, letterIndex + 1);
-      letterIndex++;
+        currentPhrase = translatedPhrase.substring(0, letterIndex - 1);
+        letterIndex--;
+      } else {
+        currentPhrase = translatedPhrase.substring(0, letterIndex + 1);
+        letterIndex++;
+      }
+    
+      typingElement.textContent = currentPhrase;
+    
+      let delta = 150 - Math.random() * 100;
+    
+      if (isDeleting) {
+        delta /= 2;
+      }
+    
+      if (!isDeleting && letterIndex === translatedPhrase.length) {
+        delta = 2000;
+        isDeleting = true;
+      } else if (isDeleting && letterIndex === 0) {
+        isDeleting = false;
+        phraseIndex = (phraseIndex + 1) % phrases.length;
+        delta = 500;
+      }
+    
+      typingInterval = setTimeout(typeEffect, delta);
     }
-
-    typingElement.textContent = currentPhrase;
-
-    let delta = 150 - Math.random() * 100;
-
-    if (isDeleting) {
-      delta /= 2;
-    }
-
-    if (!isDeleting && letterIndex === translatedPhrase.length) {
-      delta = 2000;
-      isDeleting = true;
-    } else if (isDeleting && letterIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      delta = 500;
-    }
-
-    typingInterval = setTimeout(typeEffect, delta);
-  }
 
   // Start the typing effect
   typeEffect();
@@ -201,19 +203,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update typing effect phrases
     phrases = [
-      "Front-end Developer",
-      "Video Game Tester",
-      "Web Experience Creator",
-    ].map(phrase => getTranslatedPhrase(phrase));
-
-    // Restart typing effect
-    clearTimeout(typingInterval);
-    letterIndex = 0;
-    isDeleting = false;
-    phraseIndex = 0;
-    currentPhrase = "";
-    typingElement.textContent = "";
-    typeEffect();
+        "Front-end Developer",
+        "Video Game Tester",
+        "Dev Web-Ui",
+        "cook",
+        "confectioner"
+      ].map(phrase => getTranslatedPhrase(phrase));
+    
+      // Reinicia el efecto de escritura
+      clearTimeout(typingInterval);
+      letterIndex = 0;
+      isDeleting = false;
+      phraseIndex = 0;
+      currentPhrase = "";
+      typingElement.textContent = "";
+      typeEffect();
 
     lastClickedLink = null;
     updateActiveNavLink();
@@ -232,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         element.textContent = translations[currentLanguage][key];
       }
     });
+    phrases = phrases.map(phrase => getTranslatedPhrase(phrase));
   }
 
   initializeTranslations();
