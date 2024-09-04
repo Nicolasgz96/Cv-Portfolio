@@ -185,6 +185,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    loadProjects(currentLanguage).then(() => {
+      console.log('Projects reloaded with new language');
+      initCarousels();
+    }).catch(error => {
+      console.error('Error reloading projects:', error);
+    });
+
     document.querySelectorAll("[data-subtitle]").forEach((element) => {
       const key = element.getAttribute("data-subtitle");
       if (translations[currentLanguage][key]) {
