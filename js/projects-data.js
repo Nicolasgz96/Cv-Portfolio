@@ -2,34 +2,34 @@ export const projects = {
     web: [
       {
         id: 1,
-        title: "web-project-1-title",
-        description: "web-project-1-description",
-        image: "path/to/web-project1-image.jpg",
-        link: "https://web-project1-link.com"
+        title: "Web e-commerce",
+        description: "First web project, mocking an e-commerce.",
+        image: "./assets/img/Web-e-commers.png",
+        link: "https://nicolasgz96.github.io/Entregable/login.html"
       },
       {
         id: 2,
-        title: "web-project-2-title",
-        description: "web-project-2-description",
-        image: "path/to/web-project2-image.jpg",
-        link: "https://web-project2-link.com"
+        title: "Web e-commerce with express",
+        description: "First web project, mocking an e-commerce.",
+        image: "./assets/img/back.png",
+        link: "https://github.com/Nicolasgz96/Proyecto-back"
       },
       // ... más proyectos web
     ],
     scripts: [
       {
         id: 1,
-        title: "script-project-1-title",
-        description: "script-project-1-description",
-        image: "path/to/script-project1-image.jpg",
-        link: "https://script-project1-link.com"
+        title: "Web e-commerce",
+        description: "First web project, mocking an e-commerce.",
+        image: "./assets/img/Web-e-commers.png",
+        link: "https://nicolasgz96.github.io/Entregable/login.html"
       },
       {
         id: 2,
-        title: "script-project-2-title",
-        description: "script-project-2-description",
-        image: "path/to/script-project2-image.jpg",
-        link: "https://script-project2-link.com"
+        title: "Web e-commerce",
+        description: "First web project, mocking an e-commerce.",
+        image: "./assets/img/nico.jpg",
+        link: "https://nicolasgz96.github.io/Cv-Portfolio/"
       },
       // ... más proyectos de scripts
     ],
