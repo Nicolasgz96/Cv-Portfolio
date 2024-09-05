@@ -1,6 +1,6 @@
 // Import necessary translations and functions
 import { translations } from './translations.js';
-import { validateInput } from './formValidation.js';
+import { validateInput, validateForm } from './formValidation.js';
 import { loadProjects } from './projects.js';
 
 
@@ -285,12 +285,12 @@ document.addEventListener("DOMContentLoaded", () => {
   
   form.addEventListener('submit', function(event) {
     event.preventDefault();
-  
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-  
-    const subject = encodeURIComponent(translations[currentLanguage]['email-subject']);
+
+    if (validateForm(form, currentLanguage)) {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const subject = encodeURIComponent(translations[currentLanguage]['email-subject']);
 
     const overlay = document.createElement('div');
     overlay.className = 'email-options-overlay';
@@ -361,6 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('cancel').addEventListener('click', () => {
       document.body.removeChild(dialog);
     });
+  }
   });
 
   inputs.forEach(input => {
