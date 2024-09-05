@@ -1,0 +1,77 @@
+/* Style for footer */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 30px 0;
+    margin-top: 60px;
+    transition: margin-left var(--transition-duration) ease;
+    z-index: 1000;
+}
+
+.sidebar:hover ~ .footer {
+    margin-left: 240px;
+}
+
+/* Style for footer headings */
+.footer h5 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* Style for footer links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+/* Hover effect for footer links */
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Style for social links */
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Style for social buttons */
+.social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for social buttons */
+.social-button:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Style for footer paragraphs */
+.footer p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}

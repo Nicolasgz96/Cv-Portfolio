@@ -34,7 +34,7 @@ export const projects = {
         id: 2,
         title: "script-project-2-title",
         description: "script-project-2-description",
-        image: "./assets/img/netflix.png",
+        image: "./assets/img/Netflix.png",
         link: "https://github.com/Nicolasgz96/Netflix-extention"
       },
       {

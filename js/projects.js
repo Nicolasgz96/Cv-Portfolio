@@ -23,7 +23,9 @@ export function loadProjects(currentLanguage = 'es') {
           const projectItem = document.createElement('div');
           projectItem.classList.add('project-slide');
           projectItem.innerHTML = `
-            <img src="${project.image}" alt="${translations[currentLanguage][project.title] || project.title}" class="project-image">
+            <div class="project-image-container">
+              <img src="${project.image}" alt="${translations[currentLanguage][project.title] || project.title}" class="project-image">
+            </div>
             <div class="project-content">
               <h4>${translations[currentLanguage][project.title] || project.title}</h4>
               <p>${translations[currentLanguage][project.description] || project.description}</p>
@@ -31,6 +33,7 @@ export function loadProjects(currentLanguage = 'es') {
             </div>
           `;
           carousel.appendChild(projectItem);
+          setupZoomEffect(projectItem.querySelector('.project-image-container'));
           console.log(`Added project to ${category} carousel:`, project);
         });
 
@@ -46,6 +49,29 @@ export function loadProjects(currentLanguage = 'es') {
       }
       resolve();
     }, 1000);
+  });
+}
+
+function setupZoomEffect(container) {
+  const image = container.querySelector('.project-image');
+
+  container.addEventListener('mousemove', (e) => {
+    const rect = container.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const xPercent = (x / rect.width) * 100;
+    const yPercent = (y / rect.height) * 100;
+
+    image.style.transformOrigin = `${xPercent}% ${yPercent}%`;
+  });
+
+  container.addEventListener('mouseenter', () => {
+    image.style.transform = 'scale(1.5)';
+  });
+
+  container.addEventListener('mouseleave', () => {
+    image.style.transform = 'scale(1)';
   });
 }
 

@@ -10,9 +10,14 @@
     <link rel="manifest" href="assets/favicon/site.webmanifest">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/sections.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+    <body>
     <div class="container-fluid">
         <div class="row">
             <div class="content-wrapper">
@@ -98,7 +103,7 @@
                             </div>
                           </div>
                           <div class="col-md-8">
-                            <div class="about-text">
+                            <div class="about-text" id="about-description">
                               <p data-translate="about-description"></p>
                               <div class="about-highlights">
                                 <div class="highlight-item">
@@ -186,8 +191,8 @@
                         </div>
                         <div class="col-md-3 mb-3">
                             <div class="skill-item">
-                                <i class="fas fa-file-excel"></i>
-                                <h3>Excel</h3>
+                                <i class="fas fa-file-word"></i>
+                                <h3>Microsoft Office</h3>
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
@@ -331,7 +336,7 @@
                     <section id="contact" class="section">
                         <div class="contact-container">
                             <h2 class="contact-title section-title" data-translate="contact">Contacto</h2>
-                            <form class="contact-form" novalidate>
+                            <form id="contact-form" class="contact-form" novalidate>
                                 <div class="form-group">
                                     <input type="text" id="name" name="name" required>
                                     <label for="name" data-translate="name">Nombre</label>

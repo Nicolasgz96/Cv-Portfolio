@@ -3,6 +3,8 @@ import { translations } from './translations.js';
 import { validateInput } from './formValidation.js';
 import { loadProjects } from './projects.js';
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
   // Get the DOM elements I'll need
   const sidebar = document.getElementById("sidebar");
@@ -16,6 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const languageToggle = document.getElementById("languageToggle");
   let currentLanguage = "es";
   let lastClickedLink = null;
+
+  function updateAboutDescription() {
+    const aboutDescriptionElement = document.getElementById('about-description');
+    aboutDescriptionElement.innerHTML = translations[currentLanguage]["about-description"];
+  }
 
   // Configure the progress circle
   progressRing.style.strokeDasharray = `${circumference} ${circumference}`;
@@ -184,6 +191,8 @@ document.addEventListener("DOMContentLoaded", () => {
         element.textContent = translations[currentLanguage][key];
       }
     });
+    
+    updateAboutDescription();
 
     loadProjects(currentLanguage).then(() => {
       console.log('Projects reloaded with new language');
@@ -271,21 +280,87 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle form validation
   const form = document.querySelector('.contact-form');
   const inputs = form.querySelectorAll('input, textarea');
+  const yourEmail = '96.nicolas.gonzalez@gmail.com';
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    let isValid = true;
+  
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+  
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+  
+    const subject = encodeURIComponent(translations[currentLanguage]['email-subject']);
 
-    inputs.forEach(input => {
-      if (!validateInput(input, currentLanguage)) {
-        isValid = false;
-      }
+    const overlay = document.createElement('div');
+    overlay.className = 'email-options-overlay';
+    overlay.innerHTML = `
+    <div class="email-options">
+      <h3>${translations[currentLanguage]['email-instructions-title']}</h3>
+      <p>${translations[currentLanguage]['email-instructions']}</p>
+      <textarea id="message-body" readonly rows="5">${message}</textarea>
+      <div class="button-group">
+        <button id="copy-body"><i class="fas fa-copy"></i> ${translations[currentLanguage]['copy-body']}</button>
+        <button id="default-client"><i class="fas fa-envelope"></i> ${translations[currentLanguage]['default-email-client']}</button>
+        <button id="gmail"><i class="fab fa-google"></i> Gmail</button>
+        <button id="outlook"><i class="fab fa-microsoft"></i> Outlook</button>
+        <button id="cancel"><i class="fas fa-times"></i> ${translations[currentLanguage]['cancel']}</button>
+      </div>
+    </div>
+    `;
+    document.body.appendChild(overlay);
+  
+    const dialog = document.createElement('div');
+    dialog.innerHTML = `
+      <div class="email-options">
+        <h3>${translations[currentLanguage]['email-instructions-title']}</h3>
+        <p>${translations[currentLanguage]['email-instructions']}</p>
+        <p><strong>${translations[currentLanguage]['to']}:</strong> ${yourEmail}</p>
+        <p><strong>${translations[currentLanguage]['subject']}:</strong> ${decodeURIComponent(subject)}</p>
+        <p><strong>${translations[currentLanguage]['body']}:</strong></p>
+        <textarea id="message-body" readonly rows="10" cols="50">${message}</textarea>
+        <button id="copy-body">${translations[currentLanguage]['copy-body']}</button>
+        <button id="default-client">${translations[currentLanguage]['default-email-client']}</button>
+        <button id="gmail">Gmail</button>
+        <button id="outlook">Outlook</button>
+        <button id="cancel">${translations[currentLanguage]['cancel']}</button>
+      </div>
+    `;
+    document.body.appendChild(dialog);
+  
+    document.getElementById('copy-body').addEventListener('click', () => {
+      const textarea = document.getElementById('message-body');
+      textarea.select();
+      document.execCommand('copy');
+      alert(translations[currentLanguage]['body-copied']);
     });
-
-    if (isValid) {
-      console.log('Form submitted');
-      // Here I can add the code to send the form
+  
+    const mailtoLink = `mailto:${yourEmail}?subject=${subject}&body=${encodeURIComponent(message)}`;
+    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${yourEmail}&su=${subject}&body=${encodeURIComponent(message)}`;
+    const outlookLink = `https://outlook.live.com/mail/0/deeplink/compose?to=${yourEmail}&subject=${subject}&body=${encodeURIComponent(message)}`;
+  
+    function handleEmailAction(action) {
+      action();
+      document.body.removeChild(dialog);
+      form.reset(); // Limpia el formulario
     }
+
+    document.getElementById('cancel').addEventListener('click', () => {
+      document.body.removeChild(overlay);
+    });
+  
+    document.getElementById('default-client').addEventListener('click', () => {
+      handleEmailAction(() => { window.location.href = mailtoLink; });
+    });
+    document.getElementById('gmail').addEventListener('click', () => {
+      handleEmailAction(() => { window.open(gmailLink, '_blank'); });
+    });
+    document.getElementById('outlook').addEventListener('click', () => {
+      handleEmailAction(() => { window.open(outlookLink, '_blank'); });
+    });
+    document.getElementById('cancel').addEventListener('click', () => {
+      document.body.removeChild(dialog);
+    });
   });
 
   inputs.forEach(input => {
@@ -413,6 +488,7 @@ document.addEventListener("DOMContentLoaded", () => {
         element.textContent = translations[currentLanguage][key];
       }
     });
+    updateAboutDescription();
   }
 
   initializeTranslations();
