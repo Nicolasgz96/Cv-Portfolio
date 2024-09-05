@@ -40,6 +40,7 @@
 /* Hover effect for footer links */
 .footer-links a:hover {
   color: var(--secondary-color);
+  transform: translateY(-3px);
 }
 
 /* Style for social links */

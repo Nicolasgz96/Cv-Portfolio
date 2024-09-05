@@ -119,3 +119,10 @@
     margin-left: 5% !important;
   }
 }
+
+@media (max-width: 767px) {
+  .about-content .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

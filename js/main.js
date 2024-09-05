@@ -3,9 +3,10 @@ import { translations } from './translations.js';
 import { validateInput, validateForm } from './formValidation.js';
 import { loadProjects } from './projects.js';
 
-
+let currentLanguage = "en";
 
 document.addEventListener("DOMContentLoaded", () => {
+
   // Get the DOM elements I'll need
   const sidebar = document.getElementById("sidebar");
   const body = document.body;
@@ -16,12 +17,44 @@ document.addEventListener("DOMContentLoaded", () => {
   const circumference = radius * 2 * Math.PI;
   const sections = document.querySelectorAll(".section");
   const languageToggle = document.getElementById("languageToggle");
-  let currentLanguage = "en";
+ 
   let lastClickedLink = null;
 
   function updateAboutDescription() {
     const aboutDescriptionElement = document.getElementById('about-description');
     aboutDescriptionElement.innerHTML = translations[currentLanguage]["about-description"];
+  }
+
+  function updateHighlightItems() {
+    const aboutSection = document.querySelector('#about');
+    if (!aboutSection) {
+      return;
+    }
+    
+    let aboutHighlights = aboutSection.querySelector('.about-highlights');
+    
+    if (!aboutHighlights) {
+      aboutHighlights = document.createElement('div');
+      aboutHighlights.className = 'about-highlights';
+      aboutSection.appendChild(aboutHighlights);
+    }
+  
+    const highlightItems = [
+      { icon: 'fas fa-code', key: 'highlight-1' },
+      { icon: 'fas fa-gamepad', key: 'highlight-2' },
+      { icon: 'fas fa-globe', key: 'highlight-3' },
+      { icon: 'fas fa-tv', key: 'highlight-4' },
+      { icon: 'fas fa-laptop-code', key: 'highlight-5' },
+      { icon: 'fas fa-tasks', key: 'highlight-6' }
+    ];
+  
+    aboutHighlights.innerHTML = highlightItems.map(item => `
+      <div class="highlight-item">
+        <i class="${item.icon}"></i>
+        <span data-translate="${item.key}">${translations[currentLanguage][item.key] || ''}</span>
+      </div>
+    `).join('');
+  
   }
 
   // Configure the progress circle
@@ -184,21 +217,19 @@ document.addEventListener("DOMContentLoaded", () => {
   function changeLanguage() {
     currentLanguage = currentLanguage === "es" ? "en" : "es";
     languageToggle.querySelector("span").textContent = currentLanguage.toUpperCase();
-
+  
     document.querySelectorAll("[data-translate]").forEach((element) => {
       const key = element.getAttribute("data-translate");
       if (translations[currentLanguage][key]) {
         element.textContent = translations[currentLanguage][key];
       }
     });
-
+  
+    updateHighlightItems();
     updateAboutDescription();
-
-    loadProjects(currentLanguage).then(() => {
-      console.log('Projects reloaded with new language');
-      initCarousels();
-    }).catch(error => {
-      console.error('Error reloading projects:', error);
+  
+    loadProjects(currentLanguage).catch(error => {
+      console.error('Error recargando proyectos:', error);
     });
 
     document.querySelectorAll("[data-subtitle]").forEach((element) => {
@@ -237,8 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lastClickedLink = null;
     updateActiveNavLink();
-
-    console.log(`Language changed to: ${currentLanguage}`);
   }
 
   // Add event listener for language change
@@ -252,10 +281,9 @@ document.addEventListener("DOMContentLoaded", () => {
         element.textContent = translations[currentLanguage][key];
       }
     });
-    phrases = phrases.map(phrase => getTranslatedPhrase(phrase));
+    updateHighlightItems();
+    updateAboutDescription();
   }
-
-  initializeTranslations();
 
   // Set up intersection observer for animations
   const observer = new IntersectionObserver(
@@ -287,8 +315,6 @@ document.addEventListener("DOMContentLoaded", () => {
     event.preventDefault();
 
     if (validateForm(form, currentLanguage)) {
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
       const subject = encodeURIComponent(translations[currentLanguage]['email-subject']);
 
@@ -342,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
       function handleEmailAction(action) {
         action();
         document.body.removeChild(dialog);
-        form.reset(); // Limpia el formulario
+        form.reset(); 
       }
 
       document.getElementById('cancel').addEventListener('click', () => {
@@ -384,78 +410,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Initialize project carousels
-  function initCarousels() {
-    const carousels = document.querySelectorAll('.project-carousel');
-    carousels.forEach(carousel => {
-      const items = carousel.querySelectorAll('.project-item');
-      if (items.length === 0) {
-        console.log('No items in carousel:', carousel.id);
-        return;
-      }
-
-      console.log('Initializing carousel:', carousel.id, 'with', items.length, 'items');
-
-      const buttonsHtml = Array.from(items, () => {
-        return `<span class="carousel-dot"></span>`;
-      });
-
-      carousel.insertAdjacentHTML("afterend", `
-        <div class="carousel-nav">
-          ${buttonsHtml.join("")}
-        </div>
-      `);
-
-      const buttons = carousel.nextElementSibling.querySelectorAll('.carousel-dot');
-
-      buttons.forEach((button, i) => {
-        button.addEventListener('click', () => {
-          items.forEach(item => item.classList.remove('active'));
-          buttons.forEach(button => button.classList.remove('active'));
-
-          items[i].classList.add('active');
-          button.classList.add('active');
-        });
-      });
-
-      if (items.length > 0 && buttons.length > 0) {
-        items[0].classList.add('active');
-        buttons[0].classList.add('active');
-      }
-
-      carousel.insertAdjacentHTML("beforeend", `
-        <button class="carousel-button prev">&lt;</button>
-        <button class="carousel-button next">&gt;</button>
-      `);
-
-      const prevButton = carousel.querySelector('.prev');
-      const nextButton = carousel.querySelector('.next');
-
-      prevButton.addEventListener('click', () => {
-        const currentIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
-        const prevIndex = (currentIndex - 1 + items.length) % items.length;
-        buttons[prevIndex].click();
-      });
-
-      nextButton.addEventListener('click', () => {
-        const currentIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
-        const nextIndex = (currentIndex + 1) % items.length;
-        buttons[nextIndex].click();
-      });
-    });
-  }
-
   // Load projects and initialize carousels
   function loadAndInitProjects() {
-    loadProjects().then(() => {
-      console.log('Projects loaded, initializing carousels...');
-      initCarousels();
-    }).catch(error => {
-      console.error('Error loading projects:', error);
-    });
+    loadProjects(currentLanguage)
+      .then(() => {
+        console.log('Projects loaded successfully');
+      })
+      .catch(error => {
+        console.error('Error loading projects:', error);
+      });
   }
-
-  loadAndInitProjects();
 
   // Handle click on navigation links
   function handleNavLinkClick(event) {
@@ -489,9 +453,23 @@ document.addEventListener("DOMContentLoaded", () => {
         element.textContent = translations[currentLanguage][key];
       }
     });
+    updateHighlightItems();
     updateAboutDescription();
   }
 
-  initializeTranslations();
+  // Smooth scroll to footer links
+  const footerLinks = document.querySelectorAll('.footer-links a');
+  footerLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          document.querySelector(targetId).scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
+  });
 
+  initializeTranslations();
+  updateHighlightItems();
+  loadAndInitProjects();
 });

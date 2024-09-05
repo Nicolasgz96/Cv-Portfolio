@@ -80,21 +80,21 @@ export const translations = {
       "Mi primer bot de Discord, hecho con discord.js y node.js.",
     "script-project-2-title": "Extensión de Netflix",
     "script-project-2-description":
-      "Extensión de netflix hecha con Html, Css, MongoDB y Node.js.",
+      "Extensión de Netflix hecha con HTML, CSS, MongoDB y Node.js.",
     "script-project-3-title": "Aimbot CS2",
     "script-project-3-description": "Aimbot para CS2, hecho con cheat-engine.",
-    "game-project-1-title": "Juego Piedra, papel o tijera.",
+    "game-project-1-title": "Juego piedra, papel o tijera",
     "game-project-1-description":
-      "Juego de piedra, papel o tijera hecho con Html, Css y Javascript.",
+      "Juego de piedra, papel o tijera hecho con HTML, CSS y Javascript.",
     "game-project-2-title": "Juego de la viborita",
     "game-project-2-description":
-      "Juego de la viborita hecho con Html, Css y Javascript.",
-    "game-project-3-title": "Juego de ta-te-ti.",
+      "Juego de la viborita hecho con HTML, CSS y Javascript.",
+    "game-project-3-title": "Juego de ta-te-ti",
     "game-project-3-description":
-      "Juego de ta-te-ti hecho con Html, Css y Javascript.",
-    "game-project-4-title": "Cronómetro.",
+      "Juego de ta-te-ti hecho con HTML, CSS y Javascript.",
+    "game-project-4-title": "Cronómetro",
     "game-project-4-description":
-      "Cronómetro hecho con Html, Css y Javascript.",
+      "Cronómetro hecho con HTML, CSS y Javascript.",
     "view-project": "Ver Proyecto",
     "no-projects": "No hay proyectos disponibles en esta categoría.",
     "Desarrollador Front-end": "Desarrollador Front-end",
@@ -104,7 +104,7 @@ export const translations = {
     "footer-dec": "Desarrollador Front-end y Tester de Videojuegos",
     "footer-link": "Enlaces Rápidos",
     "footer-link-home": "Inicio",
-    "footer-link-about": "Sobre Mí",
+    "footer-link-about": "Sobre mí",
     "footer-link-skills": "Habilidades",
     "footer-link-projects": "Proyectos",
     "footer-link-contact": "Contacto",
@@ -192,21 +192,21 @@ export const translations = {
       "My first discord bot, made with Discord.js and Node.js.",
     "script-project-2-title": "Netflix extention",
     "script-project-2-description":
-      "A netflix extention made with Html, Css, MongoDB and Node.js.",
+      "A Netflix extention made with HTML, CSS, MongoDB and Node.js.",
     "script-project-3-title": "Aimbot CS2",
     "script-project-3-description": "Aimbot for CS2, made with cheat-engine.",
     "game-project-1-title": "Rock, papper, scissors game",
     "game-project-1-description":
-      "Rock, papper, scissors game made with Html, Css and Javascript.",
+      "Rock, papper, scissors game made with HTML, CSS and Javascript.",
     "game-project-2-title": "Snake game",
     "game-project-2-description":
-      "Snake game made with Html, Css and Javascript.",
+      "Snake game made with HTML, CSS and Javascript.",
     "game-project-3-title": "Tic-tac-toe game",
     "game-project-3-description":
-      "Tic-tac-toe game made with Html, Css and Javascript.",
+      "Tic-tac-toe game made with HTML, CSS and Javascript.",
     "game-project-4-title": "Stopwatch",
     "game-project-4-description":
-      "Stopwatch made with Html, Css and Javascript.",
+      "Stopwatch made with HTML, CSS and Javascript.",
     "view-project": "View Project",
     "no-projects": "No projects available in this category.",
     "Desarrollador Front-end": "Front-end Developer",
@@ -216,10 +216,10 @@ export const translations = {
     "footer-dec": "Front-end Developer and Video Game Tester",
     "footer-link": "Quick Links",
     "footer-link-home": "Home",
-    "footer-link-about": "About",
+    "footer-link-about": "About me",
     "footer-link-skills": "Skills",
     "footer-link-projects": "Projects",
-    "footer-link-contact": "Contact",
+    "footer-link-contact": "Contact me",
     "footer-contactme": "Contact me",
   },
 };
