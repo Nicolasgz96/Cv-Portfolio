@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const circumference = radius * 2 * Math.PI;
   const sections = document.querySelectorAll(".section");
   const languageToggle = document.getElementById("languageToggle");
-  let currentLanguage = "es";
+  let currentLanguage = "en";
   let lastClickedLink = null;
 
   function updateAboutDescription() {
@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
         element.textContent = translations[currentLanguage][key];
       }
     });
-    
+
     updateAboutDescription();
 
     loadProjects(currentLanguage).then(() => {
