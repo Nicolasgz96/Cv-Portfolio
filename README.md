@@ -43,10 +43,11 @@ Visit the live site: [Nicolas Gonzalez Portfolio](https://nicolasgz96.github.io/
 
 To make changes to the portfolio:
 
-1. Edit the HTML files to update content.
-2. Modify `css/styles.css` for styling changes.
-3. Update `js/main.js` for functionality updates.
+1. Edit `index.html` to update content.
+2. Modify CSS files in the `css/` directory for styling changes.
+3. Update JavaScript files in the `js/` directory for functionality updates.
 4. Adjust `js/translations.js` to modify or add new translations.
+5. Add or update project information in `js/projects-data.js`.
 
 ## Project Structure
 
@@ -54,15 +55,22 @@ portfolio/
 │
 ├── index.html
 ├── css/
-│ └── styles.css
+│ ├── styles.css
+│ ├── navbar.css
+│ ├── sections.css
+│ ├── contact.css
+│ ├── footer.css
+│ └── responsive.css
 ├── js/
 │ ├── main.js
 │ ├── translations.js
 │ ├── formValidation.js
-│ └── projects.js
+│ ├── projects.js
+│ └── projects-data.js
 ├── assets/
-│ ├── img/
-│ └── cv/
+│ ├── cv/
+│ ├── favicon/
+│ └── img/
 └── README.md
 
 ## Deployment
