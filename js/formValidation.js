@@ -12,14 +12,14 @@ export function validateInput(input, currentLanguage) {
     // Show the error message corresponding to the field and current language
     errorMessage.textContent = translations[currentLanguage][`${input.id}-error`];
     isValid = false;
-  } 
+  }
   // Check if it's an email and if it's valid
   else if (input.type === 'email' && !input.validity.valid) {
     formGroup.classList.add('error');
     // Show the error message for invalid email
     errorMessage.textContent = translations[currentLanguage]['email-error'];
     isValid = false;
-  } 
+  }
   // If everything is okay, remove the error class
   else {
     formGroup.classList.remove('error');
@@ -81,7 +81,7 @@ function validateMessage(message) {
 
 // I can use this function for more specific validations if I need them
 export function validateField(field, value, currentLanguage) {
-  switch(field) {
+  switch (field) {
     case 'name':
       return validateName(value) ? '' : translations[currentLanguage]['name-error'];
     case 'email':

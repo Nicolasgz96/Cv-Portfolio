@@ -39,15 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = window.scrollY;
     const scrollPercentage = (scrolled / scrollTotal) * 100;
-  
+
     if (scrolled > 300) {
       scrollToTopBtn.style.display = "block";
     } else {
       scrollToTopBtn.style.display = "none";
     }
-  
+
     setProgress(scrollPercentage);
-  
+
     if (!lastClickedLink) {
       updateActiveNavLink();
     }
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Update the active navigation link
   function updateActiveNavLink() {
     const isNavbarExpanded = sidebar.classList.contains('expanded');
-    
+
     if (!lastClickedLink) {
       const currentSection = Array.from(sections).reverse().find(section => {
         const rect = section.getBoundingClientRect();
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.remove('sidebar-expanded');
     }
   }
-  
+
   // Expand/collapse the sidebar on mouse enter/leave
   sidebar.addEventListener("mouseenter", () => toggleSidebar(true));
   sidebar.addEventListener("mouseleave", () => toggleSidebar(false));
@@ -148,34 +148,34 @@ document.addEventListener("DOMContentLoaded", () => {
   // Typing effect
   function typeEffect() {
     const translatedPhrase = getTranslatedPhrase(phrases[phraseIndex]);
-  
+
     if (isDeleting) {
-        currentPhrase = translatedPhrase.substring(0, letterIndex - 1);
-        letterIndex--;
-      } else {
-        currentPhrase = translatedPhrase.substring(0, letterIndex + 1);
-        letterIndex++;
-      }
-    
-      typingElement.textContent = currentPhrase;
-    
-      let delta = 150 - Math.random() * 100;
-    
-      if (isDeleting) {
-        delta /= 2;
-      }
-    
-      if (!isDeleting && letterIndex === translatedPhrase.length) {
-        delta = 2000;
-        isDeleting = true;
-      } else if (isDeleting && letterIndex === 0) {
-        isDeleting = false;
-        phraseIndex = (phraseIndex + 1) % phrases.length;
-        delta = 500;
-      }
-    
-      typingInterval = setTimeout(typeEffect, delta);
+      currentPhrase = translatedPhrase.substring(0, letterIndex - 1);
+      letterIndex--;
+    } else {
+      currentPhrase = translatedPhrase.substring(0, letterIndex + 1);
+      letterIndex++;
     }
+
+    typingElement.textContent = currentPhrase;
+
+    let delta = 150 - Math.random() * 100;
+
+    if (isDeleting) {
+      delta /= 2;
+    }
+
+    if (!isDeleting && letterIndex === translatedPhrase.length) {
+      delta = 2000;
+      isDeleting = true;
+    } else if (isDeleting && letterIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      delta = 500;
+    }
+
+    typingInterval = setTimeout(typeEffect, delta);
+  }
 
   // Start the typing effect
   typeEffect();
@@ -219,21 +219,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update typing effect phrases
     phrases = [
-        "Front-end Developer",
-        "Video Game Tester",
-        "Dev Web-Ui",
-        "cook",
-        "confectioner"
-      ].map(phrase => getTranslatedPhrase(phrase));
-    
-      // Reinicia el efecto de escritura
-      clearTimeout(typingInterval);
-      letterIndex = 0;
-      isDeleting = false;
-      phraseIndex = 0;
-      currentPhrase = "";
-      typingElement.textContent = "";
-      typeEffect();
+      "Front-end Developer",
+      "Video Game Tester",
+      "Dev Web-Ui",
+      "cook",
+      "confectioner"
+    ].map(phrase => getTranslatedPhrase(phrase));
+
+    // Reinicia el efecto de escritura
+    clearTimeout(typingInterval);
+    letterIndex = 0;
+    isDeleting = false;
+    phraseIndex = 0;
+    currentPhrase = "";
+    typingElement.textContent = "";
+    typeEffect();
 
     lastClickedLink = null;
     updateActiveNavLink();
@@ -282,8 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputs = form.querySelectorAll('input, textarea');
   const yourEmail = '96.nicolas.gonzalez@gmail.com';
 
-  
-  form.addEventListener('submit', function(event) {
+
+  form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     if (validateForm(form, currentLanguage)) {
@@ -292,9 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = document.getElementById('message').value;
       const subject = encodeURIComponent(translations[currentLanguage]['email-subject']);
 
-    const overlay = document.createElement('div');
-    overlay.className = 'email-options-overlay';
-    overlay.innerHTML = `
+      const overlay = document.createElement('div');
+      overlay.className = 'email-options-overlay';
+      overlay.innerHTML = `
     <div class="email-options">
       <h3>${translations[currentLanguage]['email-instructions-title']}</h3>
       <p>${translations[currentLanguage]['email-instructions']}</p>
@@ -308,10 +308,10 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </div>
     `;
-    document.body.appendChild(overlay);
-  
-    const dialog = document.createElement('div');
-    dialog.innerHTML = `
+      document.body.appendChild(overlay);
+
+      const dialog = document.createElement('div');
+      dialog.innerHTML = `
       <div class="email-options">
         <h3>${translations[currentLanguage]['email-instructions-title']}</h3>
         <p>${translations[currentLanguage]['email-instructions']}</p>
@@ -326,46 +326,46 @@ document.addEventListener("DOMContentLoaded", () => {
         <button id="cancel">${translations[currentLanguage]['cancel']}</button>
       </div>
     `;
-    document.body.appendChild(dialog);
-  
-    document.getElementById('copy-body').addEventListener('click', () => {
-      const textarea = document.getElementById('message-body');
-      textarea.select();
-      document.execCommand('copy');
-      alert(translations[currentLanguage]['body-copied']);
-    });
-  
-    const mailtoLink = `mailto:${yourEmail}?subject=${subject}&body=${encodeURIComponent(message)}`;
-    const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${yourEmail}&su=${subject}&body=${encodeURIComponent(message)}`;
-    const outlookLink = `https://outlook.live.com/mail/0/deeplink/compose?to=${yourEmail}&subject=${subject}&body=${encodeURIComponent(message)}`;
-  
-    function handleEmailAction(action) {
-      action();
-      document.body.removeChild(dialog);
-      form.reset(); // Limpia el formulario
-    }
+      document.body.appendChild(dialog);
 
-    document.getElementById('cancel').addEventListener('click', () => {
-      document.body.removeChild(overlay);
-    });
-  
-    document.getElementById('default-client').addEventListener('click', () => {
-      handleEmailAction(() => { window.location.href = mailtoLink; });
-    });
-    document.getElementById('gmail').addEventListener('click', () => {
-      handleEmailAction(() => { window.open(gmailLink, '_blank'); });
-    });
-    document.getElementById('outlook').addEventListener('click', () => {
-      handleEmailAction(() => { window.open(outlookLink, '_blank'); });
-    });
-    document.getElementById('cancel').addEventListener('click', () => {
-      document.body.removeChild(dialog);
-    });
-  }
+      document.getElementById('copy-body').addEventListener('click', () => {
+        const textarea = document.getElementById('message-body');
+        textarea.select();
+        document.execCommand('copy');
+        alert(translations[currentLanguage]['body-copied']);
+      });
+
+      const mailtoLink = `mailto:${yourEmail}?subject=${subject}&body=${encodeURIComponent(message)}`;
+      const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${yourEmail}&su=${subject}&body=${encodeURIComponent(message)}`;
+      const outlookLink = `https://outlook.live.com/mail/0/deeplink/compose?to=${yourEmail}&subject=${subject}&body=${encodeURIComponent(message)}`;
+
+      function handleEmailAction(action) {
+        action();
+        document.body.removeChild(dialog);
+        form.reset(); // Limpia el formulario
+      }
+
+      document.getElementById('cancel').addEventListener('click', () => {
+        document.body.removeChild(overlay);
+      });
+
+      document.getElementById('default-client').addEventListener('click', () => {
+        handleEmailAction(() => { window.location.href = mailtoLink; });
+      });
+      document.getElementById('gmail').addEventListener('click', () => {
+        handleEmailAction(() => { window.open(gmailLink, '_blank'); });
+      });
+      document.getElementById('outlook').addEventListener('click', () => {
+        handleEmailAction(() => { window.open(outlookLink, '_blank'); });
+      });
+      document.getElementById('cancel').addEventListener('click', () => {
+        document.body.removeChild(dialog);
+      });
+    }
   });
 
   inputs.forEach(input => {
-    input.addEventListener('input', function() {
+    input.addEventListener('input', function () {
       validateInput(this, currentLanguage);
     });
   });
@@ -374,10 +374,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageTextarea = document.getElementById('message');
   const charCount = document.getElementById('char-count');
 
-  messageTextarea.addEventListener('input', function() {
+  messageTextarea.addEventListener('input', function () {
     const remainingChars = 3000 - this.value.length;
     charCount.textContent = this.value.length;
-    
+
     if (remainingChars < 0) {
       this.value = this.value.slice(0, 3000);
       charCount.textContent = 3000;
@@ -393,50 +393,50 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('No items in carousel:', carousel.id);
         return;
       }
-  
+
       console.log('Initializing carousel:', carousel.id, 'with', items.length, 'items');
-  
+
       const buttonsHtml = Array.from(items, () => {
         return `<span class="carousel-dot"></span>`;
       });
-  
+
       carousel.insertAdjacentHTML("afterend", `
         <div class="carousel-nav">
           ${buttonsHtml.join("")}
         </div>
       `);
-  
+
       const buttons = carousel.nextElementSibling.querySelectorAll('.carousel-dot');
-  
+
       buttons.forEach((button, i) => {
         button.addEventListener('click', () => {
           items.forEach(item => item.classList.remove('active'));
           buttons.forEach(button => button.classList.remove('active'));
-  
+
           items[i].classList.add('active');
           button.classList.add('active');
         });
       });
-  
+
       if (items.length > 0 && buttons.length > 0) {
         items[0].classList.add('active');
         buttons[0].classList.add('active');
       }
-  
+
       carousel.insertAdjacentHTML("beforeend", `
         <button class="carousel-button prev">&lt;</button>
         <button class="carousel-button next">&gt;</button>
       `);
-  
+
       const prevButton = carousel.querySelector('.prev');
       const nextButton = carousel.querySelector('.next');
-  
+
       prevButton.addEventListener('click', () => {
         const currentIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
         const prevIndex = (currentIndex - 1 + items.length) % items.length;
         buttons[prevIndex].click();
       });
-  
+
       nextButton.addEventListener('click', () => {
         const currentIndex = Array.from(items).findIndex(item => item.classList.contains('active'));
         const nextIndex = (currentIndex + 1) % items.length;
@@ -461,12 +461,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function handleNavLinkClick(event) {
     const clickedLink = event.currentTarget;
     const sectionId = clickedLink.getAttribute("href").substring(1);
-    
+
     if (sectionId === "languages") {
       event.preventDefault();
       lastClickedLink = clickedLink;
       updateActiveNavLink();
-      
+
       // Smooth scroll to languages section
       const languagesSection = document.getElementById("languages");
       if (languagesSection) {
@@ -476,7 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lastClickedLink = null;
     }
   }
-  
+
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', handleNavLinkClick);
   });
@@ -493,5 +493,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   initializeTranslations();
-  
+
 });

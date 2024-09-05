@@ -1,123 +1,129 @@
 /* Define color palette and transition duration for easy customization */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --text-color: #ecf0f1;
-    --background-color: #34495e;
-    --transition-duration: 0.3s;
-    --accent-color: #2980b9;
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --text-color: #ecf0f1;
+  --background-color: #34495e;
+  --transition-duration: 0.3s;
+  --accent-color: #2980b9;
 
-    --popup-bg-color: #2c3e50;
-    --popup-text-color: #ecf0f1;
-    --popup-primary-btn-color: #e74c3c;
-    --popup-secondary-btn-color: #f39c12;
-    --popup-cancel-btn-color: #7f8c8d;
-    --popup-input-bg-color: #34495e;
-    --popup-input-text-color: #bdc3c7;
+  --popup-bg-color: #2c3e50;
+  --popup-text-color: #ecf0f1;
+  --popup-primary-btn-color: #e74c3c;
+  --popup-secondary-btn-color: #f39c12;
+  --popup-cancel-btn-color: #7f8c8d;
+  --popup-input-bg-color: #34495e;
+  --popup-input-text-color: #bdc3c7;
 }
 
 /* Set up the basic styles for the body */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+  font-family: "Arial", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .custom-main-margin {
-    margin-right: 10% !important;
+  margin-right: 10% !important;
 }
 
 .content-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Style the main content area */
 main {
-    margin-left: 80px;
-    padding: 40px;
-    transition: margin-left var(--transition-duration) ease;
-    flex: 1;
-    padding-bottom: 60px;
+  margin-left: 80px;
+  padding: 40px;
+  transition: margin-left var(--transition-duration) ease;
+  flex: 1;
+  padding-bottom: 60px;
 }
 
 /* Adjust main content when sidebar is expanded */
 .sidebar:hover ~ main {
-    margin-left: 240px;
+  margin-left: 240px;
 }
 
 /* Style for scroll to top button */
 #scrollToTop {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    z-index: 2000;
-    width: 50px;
-    height: 50px;
-    padding: 0;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  z-index: 2000;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 /* Hover effect for scroll to top button */
 #scrollToTop:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 /* Style for scroll to top button icon */
 #scrollToTop i {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 /* Style for typing effect */
 .typing::after {
-    content: '|';
-    animation: blink 0.7s infinite;
+  content: "|";
+  animation: blink 0.7s infinite;
 }
 
 /* Keyframes for blinking cursor */
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Style for section titles */
 .section-title {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--secondary-color);
-    font-size: 2.5rem;
-    position: relative;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s, transform 0.5s;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--secondary-color);
+  font-size: 2.5rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 /* Animation for section titles */
 .section-title.animate {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Underline effect for section titles */
 .section-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: var(--secondary-color);
-    margin: 10px auto 0;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary-color);
+  margin: 10px auto 0;
 }

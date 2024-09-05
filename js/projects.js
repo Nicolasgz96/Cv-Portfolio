@@ -11,14 +11,14 @@ export function loadProjects(currentLanguage = 'es') {
           console.warn(`Carousel not found for category: ${category}`);
           continue;
         }
-        
+
         carousel.innerHTML = '';
-        
+
         if (projectList.length === 0) {
           console.warn(`No projects found for category: ${category}`);
           continue;
         }
-        
+
         projectList.forEach((project, index) => {
           const projectItem = document.createElement('div');
           projectItem.classList.add('project-slide');

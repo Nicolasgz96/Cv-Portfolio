@@ -1,50 +1,50 @@
 /* Style for contact form container */
 .contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Style for contact form title */
 .contact-title {
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--secondary-color);
 }
 
 /* Style for form groups */
 .form-group {
-    position: relative;
-    margin-bottom: 30px;
+  position: relative;
+  margin-bottom: 30px;
 }
 
 /* Style for form inputs and textareas */
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: var(--text-color);
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-bottom: 2px solid var(--secondary-color);
-    outline: none;
-    transition: 0.3s;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-bottom: 2px solid var(--secondary-color);
+  outline: none;
+  transition: 0.3s;
 }
 
 /* Style for form labels */
 .form-group label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 16px;
-    color: var(--text-color);
-    pointer-events: none;
-    transition: 0.3s;
-    opacity: 0.7;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+  pointer-events: none;
+  transition: 0.3s;
+  opacity: 0.7;
 }
 
 /* Style for form labels when input is focused or valid */
@@ -52,167 +52,167 @@
 .form-group input:valid ~ label,
 .form-group textarea:focus ~ label,
 .form-group textarea:valid ~ label {
-    top: -20px;
-    left: 0;
-    font-size: 12px;
-    color: var(--secondary-color);
-    opacity: 1;
+  top: -20px;
+  left: 0;
+  font-size: 12px;
+  color: var(--secondary-color);
+  opacity: 1;
 }
 
 /* Style for form inputs and textareas when focused */
 .form-group input:focus,
 .form-group textarea:focus {
-    border-bottom: 2px solid var(--text-color);
-    background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid var(--text-color);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Style for form textareas */
 .form-group textarea {
-    min-height: 120px;
-    max-height: 200px;
-    height: 120px;
-    resize: none;
-    overflow-y: auto;
+  min-height: 120px;
+  max-height: 200px;
+  height: 120px;
+  resize: none;
+  overflow-y: auto;
 }
 
 /* Style for character count */
 .char-count {
-    font-size: 12px;
-    color: var(--text-color);
-    text-align: right;
-    margin-top: 5px;
+  font-size: 12px;
+  color: var(--text-color);
+  text-align: right;
+  margin-top: 5px;
 }
 
 /* Style for contact form submit button */
 .contact-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 /* Hover effect for contact form submit button */
 .contact-form button:hover {
-    background-color: var(--text-color);
-    color: var(--secondary-color);
+  background-color: var(--text-color);
+  color: var(--secondary-color);
 }
 
 /* Style for error messages */
 .error-message {
-    color: #e74c3c;
-    font-size: 12px;
-    margin-top: 5px;
-    display: none;
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
 }
 
 /* Show error message when form group has error */
 .form-group.error .error-message {
-    display: block;
+  display: block;
 }
 
 /* Style for form inputs and textareas when form group has error */
 .form-group.error input,
 .form-group.error textarea {
-    border-bottom: 2px solid #e74c3c;
+  border-bottom: 2px solid #e74c3c;
 }
 
 /* Style for email options overlay */
 .email-options-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
 /* Style for email options container */
 .email-options {
-    background-color: var(--popup-bg-color);
-    color: var(--popup-text-color);
-    border-radius: 10px;
-    padding: 25px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: var(--popup-bg-color);
+  color: var(--popup-text-color);
+  border-radius: 10px;
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for email options title */
 .email-options h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: var(--popup-text-color);
-    font-size: 1.4em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--popup-text-color);
+  font-size: 1.4em;
 }
 
 /* Style for email options paragraph */
 .email-options p {
-    margin-bottom: 15px;
-    font-size: 0.9em;
+  margin-bottom: 15px;
+  font-size: 0.9em;
 }
 
 /* Style for email options textarea */
 .email-options textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid var(--popup-input-text-color);
-    border-radius: 5px;
-    background-color: var(--popup-input-bg-color);
-    color: var(--popup-input-text-color);
-    font-size: 0.9em;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--popup-input-text-color);
+  border-radius: 5px;
+  background-color: var(--popup-input-bg-color);
+  color: var(--popup-input-text-color);
+  font-size: 0.9em;
 }
 
 /* Style for email options buttons */
 .email-options button {
-    border: none;
-    padding: 10px 15px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 0.9em;
-    font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+  font-weight: bold;
 }
 
 /* Style for copy body button */
 .email-options button#copy-body {
-    background-color: var(--popup-cancel-btn-color);
-    color: var(--popup-text-color);
+  background-color: var(--popup-cancel-btn-color);
+  color: var(--popup-text-color);
 }
 
 /* Style for default client, gmail, and outlook buttons */
 .email-options button#default-client,
 .email-options button#gmail,
 .email-options button#outlook {
-    background-color: var(--popup-secondary-btn-color);
-    color: var(--popup-bg-color);
+  background-color: var(--popup-secondary-btn-color);
+  color: var(--popup-bg-color);
 }
 
 /* Hover effect for email options buttons */
 .email-options button:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
+  opacity: 0.8;
+  transform: translateY(-2px);
 }
 
 /* Style for cancel button */
 .email-options button#cancel {
-    background-color: var(--popup-primary-btn-color);
-    color: var(--popup-text-color);
+  background-color: var(--popup-primary-btn-color);
+  color: var(--popup-text-color);
 }
 
 /* Hover effect for cancel button */
 .email-options button#cancel:hover {
-    background-color: var(--secondary-color);
+  background-color: var(--secondary-color);
 }

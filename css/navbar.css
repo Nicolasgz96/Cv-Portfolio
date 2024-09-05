@@ -1,148 +1,148 @@
 /* Style the sidebar for easy navigation */
 .sidebar {
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding-top: 20px;
-    background-color: var(--primary-color) !important;
-    overflow-y: hidden;
-    width: 80px;
-    transition: width var(--transition-duration) ease;
-    z-index: 1000;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  background-color: var(--primary-color) !important;
+  overflow-y: hidden;
+  width: 80px;
+  transition: width var(--transition-duration) ease;
+  z-index: 1000;
 }
 
 /* Expand the sidebar on hover for better visibility */
 .sidebar:hover {
-    width: 240px;
+  width: 240px;
 }
 
 /* Hide scrollbar but keep functionality */
 .sidebar-sticky {
-    height: 100%;
-    overflow-y: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .sidebar-sticky::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Style the navigation links */
 .nav-link {
-    color: var(--text-color);
-    transition: all var(--transition-duration) ease;
-    border-radius: 10px;
-    width: calc(100% - 20px);
-    height: 50px;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    margin: 10px auto;
-    overflow: hidden;
-    white-space: nowrap;
+  color: var(--text-color);
+  transition: all var(--transition-duration) ease;
+  border-radius: 10px;
+  width: calc(100% - 20px);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  margin: 10px auto;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* Style the icons in the navigation links */
 .nav-link i {
-    font-size: 1.5rem;
-    min-width: 25px;
-    text-align: center;
-    margin-right: 15px;
+  font-size: 1.5rem;
+  min-width: 25px;
+  text-align: center;
+  margin-right: 15px;
 }
 
 /* Hide the text in the navigation links when sidebar is collapsed */
 .nav-link span {
-    margin-left: 0;
-    opacity: 0;
-    transition: opacity var(--transition-duration) ease;
-    font-size: 0.9rem;
+  margin-left: 0;
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease;
+  font-size: 0.9rem;
 }
 
 /* Show the text in the navigation links when sidebar is expanded */
 .sidebar:hover .nav-link span {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Style the active and hovered navigation links */
 .nav-link:hover,
 .nav-link.active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 /* Style for active link when not hovered */
 .nav-link.active:not(:hover) {
-    background-color: transparent;
-    color: var(--secondary-color);
+  background-color: transparent;
+  color: var(--secondary-color);
 }
 
 /* Style for language toggle button */
 #languageToggle {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0.75rem 1rem;
-    border: none;
-    background-color: transparent;
-    color: var(--text-color);
-    transition: all 0.3s ease;
-    width: 100%;
-    text-align: left;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: transparent;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
 }
 
 /* Hover effect for language toggle button */
 #languageToggle:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 /* Style for language toggle button icon */
 #languageToggle i {
-    font-size: 1.25rem;
-    margin-right: 10px;
+  font-size: 1.25rem;
+  margin-right: 10px;
 }
 
 /* Style for language toggle button text */
 #languageToggle span {
-    display: inline-block;
-    transition: opacity 0.3s ease;
-    opacity: 1;
-    margin-left: 2px;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+  margin-left: 2px;
 }
 
 /* Show language toggle button text when sidebar is expanded */
 .sidebar:hover #languageToggle span {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Style for language toggle button when sidebar is collapsed */
 .sidebar.collapsed #languageToggle {
-    justify-content: center;
-    padding: 0.5rem;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    color: var(--text-color);
-    margin: 10px auto;
+  justify-content: center;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  color: var(--text-color);
+  margin: 10px auto;
 }
 
 /* Hover effect for language toggle button when sidebar is collapsed */
 .sidebar.collapsed #languageToggle:hover {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 /* Style for language toggle button icon when sidebar is collapsed */
 .sidebar.collapsed #languageToggle i {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 /* Style for language toggle button text when sidebar is collapsed */
 .sidebar.collapsed #languageToggle span {
-    display: inline-block;
-    opacity: 1;
-    margin-left: 5px;
+  display: inline-block;
+  opacity: 1;
+  margin-left: 5px;
 }

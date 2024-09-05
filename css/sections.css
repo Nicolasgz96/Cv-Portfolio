@@ -1,389 +1,389 @@
 /* Style for each section */
 .section {
-    margin-bottom: 80px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all var(--transition-duration) ease;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all var(--transition-duration) ease;
 }
 
 /* Animation for sections */
 .section.animate {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Style for skill items */
 .skill-item {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    transition: all var(--transition-duration) ease;
-    height: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  transition: all var(--transition-duration) ease;
+  height: 100%;
 }
 
 /* Hover effect for skill items */
 .skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Style for skill icons */
 .skill-item i {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    color: var(--secondary-color);
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
 }
 
 /* Style for skill titles */
 .skill-item h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0;
+  font-size: 1.2rem;
+  margin-bottom: 0;
 }
 
 /* Style for profile image container */
 .profile-image-container {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    margin: 40px auto;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 40px auto;
 }
 
 /* Style for profile image */
 .profile-image {
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
-    transition: all 0.3s ease;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
 }
 
 /* Hover effect for profile image */
 .profile-image:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(52, 152, 219, 0.5);
 }
 
 /* Style for progress ring */
 .progress-ring {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Style for progress ring circle */
 .progress-ring__circle {
-    transition: stroke-dashoffset 0.35s;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-    stroke: var(--text-color);
-    fill: none;
-    stroke-width: 4;
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke: var(--text-color);
+  fill: none;
+  stroke-width: 4;
 }
 
 /* Style for about section content */
 .about-content {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Style for about section image container */
 .about-image-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%;
-    overflow: hidden;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
 }
 
 /* Style for about section image */
 .about-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
 /* Hover effect for about section image */
 .about-image-container:hover .about-image {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /* Style for about section text */
 .about-text {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    line-height: 1.6;
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 /* Style for about section highlights */
 .about-highlights {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 /* Style for highlight items */
 .highlight-item {
-    display: flex;
-    align-items: center;
-    background-color: rgba(52, 152, 219, 0.1);
-    padding: 10px 15px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  background-color: rgba(52, 152, 219, 0.1);
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
 }
 
 /* Hover effect for highlight items */
 .highlight-item:hover {
-    background-color: rgba(52, 152, 219, 0.2);
+  background-color: rgba(52, 152, 219, 0.2);
 }
 
 /* Style for highlight item icons */
 .highlight-item i {
-    font-size: 1.2rem;
-    color: var(--secondary-color);
-    margin-right: 10px;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-right: 10px;
 }
 
 /* Style for highlight item text */
 .highlight-item span {
-    font-size: 0.9rem;
-    color: var(--text-color);
+  font-size: 0.9rem;
+  color: var(--text-color);
 }
 
 /* Style for project categories */
 .project-categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 /* Style for category cards */
 .category-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
 }
 
 /* Style for project carousel */
 .project-carousel {
-    position: relative;
-    overflow: hidden;
-    height: 450px;
-    padding-bottom: 40px; /* Add space for dots */
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  padding-bottom: 40px; /* Add space for dots */
 }
 
 /* Style for slides container */
 .slides-container {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 /* Style for project slides */
 .project-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 40px); /* Total height minus space for dots */
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 40px); /* Total height minus space for dots */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Style for active project slide */
 .project-slide.active {
-    opacity: 1;
-    z-index: 1;
+  opacity: 1;
+  z-index: 1;
 }
 
 .project-link {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 /* Style for project images */
 .project-image {
-    width: 300px;
-    height: 200px;
-    object-fit: contain;
-    object-position: center;
-    transition: transform 0.3s ease;
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.3s ease;
 }
 
 .project-image-container {
-    position: relative;
-    overflow: hidden;
-    width: 300px;
-    height: 200px;
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 200px;
 }
 
 .project-image-container:hover .project-image {
-    transform: scale(1.5);
+  transform: scale(1.5);
 }
 
 .project-content {
-    flex: 1;
-    overflow-y: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
 .project-description {
-    flex: 1;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
+  flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .project-description p {
-    margin: 0;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 }
 
 .project-link {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 /* Style for carousel buttons */
 .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 40px;
-    z-index: 10;
-    transition: opacity 0.3s, color 0.3s;
-    opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 40px;
+  z-index: 10;
+  transition: opacity 0.3s, color 0.3s;
+  opacity: 0;
 }
 
 /* Hover effect for carousel buttons */
 .carousel-button:hover {
-    opacity: 1;
-    color: var(--secondary-color);
+  opacity: 1;
+  color: var(--secondary-color);
 }
 
 /* Position carousel buttons */
 .carousel-button.prev {
-    left: 10px;
+  left: 10px;
 }
 
 .carousel-button.next {
-    right: 10px;
+  right: 10px;
 }
 
 /* Show carousel buttons on hover */
 .project-carousel:hover .carousel-button {
-    opacity: 1;
-    color: transparent;
+  opacity: 1;
+  color: transparent;
 }
 
 /* Style for carousel indicators */
 .carousel-indicators {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    transition: bottom 0.3s ease;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  transition: bottom 0.3s ease;
 }
 
 /* Show carousel indicators on hover */
 .project-carousel:hover .carousel-indicators {
-    opacity: 1;
+  opacity: 1;
 }
 
 /* Style for carousel dots */
 .carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    cursor: pointer;
-    transition: background-color 0.3s;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 /* Style for active carousel dot */
 .carousel-dot.active {
-    background-color: var(--text-color);
+  background-color: var(--text-color);
 }
 
 /* Style for download CV button */
 .download-cv {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Shine effect for download CV button */
 .download-cv:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
-    transition: all 0.4s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.4s ease;
 }
 
 /* Animate shine effect on hover */
 .download-cv:hover:before {
-    left: 100%;
+  left: 100%;
 }
 
 /* Hover effect for download CV button */
 .download-cv:hover {
-    background-color: var(--accent-color);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Active state for download CV button */
 .download-cv:active {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Style for download CV button icon */
 .download-cv i {
-    margin-right: 8px;
+  margin-right: 8px;
 }

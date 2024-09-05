@@ -150,7 +150,7 @@ export const translations = {
     greeting: "Hi, I'm Nicolas Gonzalez",
     passion:
       "Passionate about creating amazing and functional web experiences.",
-      "about-description": `I am Nicolás González, a passionate Game Quality Analyst and Front-end Developer. My experience ranges from performance optimization in AAA games to creating engaging web experiences.
+    "about-description": `I am Nicolás González, a passionate Game Quality Analyst and Front-end Developer. My experience ranges from performance optimization in AAA games to creating engaging web experiences.
 
       With a track record in projects such as <i>Suicide Squad: Kill the Justice League</i> and <i>Back 4 Blood</i>, I have honed my skills in rigorous testing and web development. My versatility extends to platforms like PC, Xbox, PlayStation 5, and Nintendo Switch, complemented by a solid knowledge of HTML, CSS, JavaScript, and React Native.
   
