@@ -75,6 +75,8 @@ export const translations = {
     "web-project-3-title": "Gourmet Hub",
     "web-project-3-description":
       "Gourmet Hub es un sistema de gestión de restaurante robusto y full-stack construido con Node.js y Express.",
+      "web-project-4-title": "Organizador de peliculas - Vue.js",
+      "web-project-4-description": "Puedes agregar, eliminar, personalizar y gestionar todas tus películas en un solo lugar con esta aplicación, construida utilizando HTML, Vue.js y CSS.",
     "script-project-1-title": "Bot de Discord",
     "script-project-1-description":
       "Mi primer bot de Discord, hecho con discord.js y node.js.",
@@ -187,6 +189,8 @@ export const translations = {
     "web-project-3-title": "Gourmet Hub",
     "web-project-3-description":
       "Gourmet Hub is a robust, full-stack restaurant management system built with Node.js and Express.",
+      "web-project-4-title": "Movie Organizer - Vue.js" ,
+      "web-project-4-description": "You can add, delete, customize, and manage all your movies in one place with this app, built using HTML, Vue.js, and CSS",
     "script-project-1-title": "Discord bot",
     "script-project-1-description":
       "My first discord bot, made with Discord.js and Node.js.",

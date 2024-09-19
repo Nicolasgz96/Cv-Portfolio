@@ -21,6 +21,13 @@ export const projects = {
       image: "./assets/img/back-end project.png",
       link: "https://github.com/Nicolasgz96/Server-node"
     },
+    {
+      id: 4,
+      title: "web-project-4-title",
+      description: "web-project-4-description",
+      image: "./assets/img/Vue-movie.jpg",
+      link: "https://github.com/Nicolasgz96/App.vue-Movie-repository"
+    }
   ],
   scripts: [
     {
