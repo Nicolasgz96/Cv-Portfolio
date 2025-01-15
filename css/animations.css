@@ -1,0 +1,454 @@
+/* Base animation properties */
+[class*="animate-"] {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation variations */
+.animate-fade-up {
+  transform: translateY(100px);
+}
+
+.animate-fade-down {
+  transform: translateY(-100px);
+}
+
+.animate-fade-left {
+  transform: translateX(-100%);
+}
+
+.animate-fade-right {
+  transform: translateX(100%);
+}
+
+.animate-scale {
+  transform: scale(0.5);
+}
+
+/* Active state for all animations */
+[class*="animate-"].active {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Section animations */
+.section {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Section-specific initial positions */
+#home.section {
+  transform: translateY(50px);
+}
+
+#about.section {
+  transform: translateX(-100%);
+}
+
+#skills.section {
+  transform: translateX(100%);
+}
+
+#projects.section {
+  transform: translateY(100px);
+}
+
+#contact.section {
+  transform: translateY(50px);
+}
+
+/* Active state for sections */
+.section.active {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* Skill items animation */
+.skill-item {
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--background-color);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.skill-item:nth-child(even) {
+  transform: translateX(200px);
+}
+
+.skill-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Soft skills styling and animation */
+.soft-skill-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--background-color);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.soft-skill-item i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+.soft-skill-item h3 {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.soft-skill-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Project categories animation */
+.category-card {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--background-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays */
+[class*="animate-"]:nth-child(1) { transition-delay: 0.1s; }
+[class*="animate-"]:nth-child(2) { transition-delay: 0.2s; }
+[class*="animate-"]:nth-child(3) { transition-delay: 0.3s; }
+[class*="animate-"]:nth-child(4) { transition-delay: 0.4s; }
+[class*="animate-"]:nth-child(5) { transition-delay: 0.5s; }
+[class*="animate-"]:nth-child(6) { transition-delay: 0.6s; }
+
+/* Reset delays when not active */
+[class*="animate-"]:not(.active) {
+  transition-delay: 0s !important;
+}
+
+/* Floating animation for profile image */
+.profile-image-container {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Ensure containers don't clip animations */
+.row {
+  overflow: visible !important;
+}
+
+/* Override any Bootstrap classes that might interfere */
+.fade {
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Ensure z-index stacking for animations */
+.section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Technical skills section specific animations */
+#skills .skill-item {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+#skills .skill-item:nth-child(even) {
+  transform: translateX(-200px);
+}
+
+#skills .skill-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays for skill items with longer transitions */
+#skills .skill-item:nth-child(1) { transition-delay: 0.1s; }
+#skills .skill-item:nth-child(2) { transition-delay: 0.2s; }
+#skills .skill-item:nth-child(3) { transition-delay: 0.3s; }
+#skills .skill-item:nth-child(4) { transition-delay: 0.4s; }
+#skills .skill-item:nth-child(5) { transition-delay: 0.5s; }
+#skills .skill-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* Project card animations */
+.project-card {
+  opacity: 0;
+  transform: translateX(-200px) rotate(-10deg);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  will-change: opacity, transform;
+}
+
+.project-card:nth-child(even) {
+  transform: translateX(200px) rotate(10deg);
+}
+
+.project-card.active {
+  opacity: 1;
+  transform: translateX(0) rotate(0);
+}
+
+/* Highlight items animation with alternating directions */
+.highlight-item {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.highlight-item:nth-child(even) {
+  transform: translateX(150px);
+}
+
+.highlight-item.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delays for highlight items */
+.highlight-item:nth-child(1) { transition-delay: 0.1s; }
+.highlight-item:nth-child(2) { transition-delay: 0.2s; }
+.highlight-item:nth-child(3) { transition-delay: 0.3s; }
+.highlight-item:nth-child(4) { transition-delay: 0.4s; }
+.highlight-item:nth-child(5) { transition-delay: 0.5s; }
+.highlight-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* Reset transitions when element is not active */
+[class*="animate-"]:not(.active),
+.section:not(.active),
+.skill-item:not(.active),
+.project-card:not(.active),
+.highlight-item:not(.active) {
+  transition-delay: 0s !important;
+}
+
+/* Additional entrance animations */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply slide animations to specific sections */
+#skills.active .section-title {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+#skills .row {
+  overflow: hidden; /* Ensure children don't show outside container */
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scale in animation */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animation classes */
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-scale {
+  animation: scaleIn 0.6s ease forwards;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Scroll reveal classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Base animation classes */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-fade-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.6s ease;
+}
+
+.animate-fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease;
+}
+
+.animate-fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.6s ease;
+}
+
+.animate-rotate {
+  opacity: 0;
+  transform: rotate(-10deg);
+  transition: all 0.6s ease;
+}
+
+/* Active states */
+.animate-fade-up.active,
+.animate-fade-down.active,
+.animate-fade-left.active,
+.animate-fade-right.active,
+.animate-scale.active,
+.animate-rotate.active {
+  opacity: 1;
+  transform: translate(0) rotate(0) scale(1);
+}
+
+/* Section-specific animations */
+#home .profile-image-container {
+  animation: float 6s ease-in-out infinite;
+}
+
+#about .about-image-container {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Pulse animation for about image */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Project carousel animations */
+.project-slide {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.project-slide.active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Skill item animations */
+.skill-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Project card animations */
+.project-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}

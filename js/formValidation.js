@@ -1,6 +1,5 @@
-import { translations } from './translations.js';
-
-export function validateInput(input, currentLanguage) {
+// Remove require statement since translations is global
+function validateInput(input, currentLanguage) {
   // Get the form group and error message element
   const formGroup = input.closest('.form-group');
   const errorMessage = formGroup.querySelector('.error-message');
@@ -29,7 +28,7 @@ export function validateInput(input, currentLanguage) {
 }
 
 // I use this function to validate the entire form before submitting
-export function validateForm(form, currentLanguage) {
+function validateForm(form, currentLanguage) {
   let isValid = true;
   // Get all inputs and textareas from the form
   const inputs = form.querySelectorAll('input, textarea');
@@ -45,7 +44,7 @@ export function validateForm(form, currentLanguage) {
 }
 
 // I use this function to clear form errors
-export function clearFormErrors(form) {
+function clearFormErrors(form) {
   const formGroups = form.querySelectorAll('.form-group');
   formGroups.forEach(group => {
     group.classList.remove('error');
@@ -57,7 +56,7 @@ export function clearFormErrors(form) {
 }
 
 // I use this function to completely reset the form
-export function resetForm(form) {
+function resetForm(form) {
   form.reset();
   clearFormErrors(form);
 }
@@ -80,7 +79,7 @@ function validateMessage(message) {
 }
 
 // I can use this function for more specific validations if I need them
-export function validateField(field, value, currentLanguage) {
+function validateField(field, value, currentLanguage) {
   switch (field) {
     case 'name':
       return validateName(value) ? '' : translations[currentLanguage]['name-error'];

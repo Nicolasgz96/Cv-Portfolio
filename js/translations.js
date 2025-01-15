@@ -1,4 +1,4 @@
-export const translations = {
+const translations = {
   es: {
     home: "Inicio",
     about: "Sobre mí",
@@ -41,8 +41,7 @@ export const translations = {
     message: "Mensaje",
     send: "Enviar",
     "email-instructions-title": "Enviar mensaje",
-    "email-instructions":
-      "Puedes copiar el mensaje o usar uno de los clientes de correo:",
+    "email-instructions": "Puedes copiar el mensaje o usar uno de los clientes de correo:",
     to: "Para",
     subject: "Asunto",
     body: "Mensaje",
@@ -63,46 +62,33 @@ export const translations = {
     "highlight-6": "Enfoque metódico y orientado a resultados",
     "game-projects": "Proyectos de Juegos",
     "view-project": "Ver Proyecto",
-    "project-1-title": "Nombre del Proyecto 1",
-    "project-1-description": "Descripción breve del Proyecto 1...",
-    "project-2-title": "Nombre del Proyecto 2",
-    "project-2-description": "Descripción breve del Proyecto 2...",
     "web-project-1-title": "Web e-commerce",
     "web-project-1-description": "Primer proyecto web, mock de un e-commerce.",
     "web-project-2-title": "Web e-commerce con express",
-    "web-project-2-description":
-      "Primer proyecto web, simulando un backend para un e-commerce.",
+    "web-project-2-description": "Primer proyecto web, simulando un backend para un e-commerce.",
     "web-project-3-title": "Gourmet Hub",
-    "web-project-3-description":
-      "Gourmet Hub es un sistema de gestión de restaurante robusto y full-stack construido con Node.js y Express.",
-      "web-project-4-title": "Organizador de peliculas - Vue.js",
-      "web-project-4-description": "Puedes agregar, eliminar, personalizar y gestionar todas tus películas en un solo lugar con esta aplicación, construida utilizando HTML, Vue.js y CSS.",
+    "web-project-3-description": "Gourmet Hub es un sistema de gestión de restaurante robusto y full-stack construido con Node.js y Express.",
+    "web-project-4-title": "Organizador de peliculas - Vue.js",
+    "web-project-4-description": "Puedes agregar, eliminar, personalizar y gestionar todas tus películas en un solo lugar con esta aplicación, construida utilizando HTML, Vue.js y CSS.",
     "script-project-1-title": "Bot de Discord",
-    "script-project-1-description":
-      "Mi primer bot de Discord, hecho con discord.js y node.js.",
+    "script-project-1-description": "Mi primer bot de Discord, hecho con discord.js y node.js.",
     "script-project-2-title": "Extensión de Netflix",
-    "script-project-2-description":
-      "Extensión de Netflix hecha con HTML, CSS, MongoDB y Node.js.",
+    "script-project-2-description": "Extensión de Netflix hecha con HTML, CSS, MongoDB y Node.js.",
     "script-project-3-title": "Aimbot CS2",
     "script-project-3-description": "Aimbot para CS2, hecho con cheat-engine.",
     "game-project-1-title": "Juego piedra, papel o tijera",
-    "game-project-1-description":
-      "Juego de piedra, papel o tijera hecho con HTML, CSS y Javascript.",
+    "game-project-1-description": "Juego de piedra, papel o tijera hecho con HTML, CSS y Javascript.",
     "game-project-2-title": "Juego de la viborita",
-    "game-project-2-description":
-      "Juego de la viborita hecho con HTML, CSS y Javascript.",
+    "game-project-2-description": "Juego de la viborita hecho con HTML, CSS y Javascript.",
     "game-project-3-title": "Juego de ta-te-ti",
-    "game-project-3-description":
-      "Juego de ta-te-ti hecho con HTML, CSS y Javascript.",
+    "game-project-3-description": "Juego de ta-te-ti hecho con HTML, CSS y Javascript.",
     "game-project-4-title": "Cronómetro",
-    "game-project-4-description":
-      "Cronómetro hecho con HTML, CSS y Javascript.",
-    "view-project": "Ver Proyecto",
+    "game-project-4-description": "Cronómetro hecho con HTML, CSS y Javascript.",
     "no-projects": "No hay proyectos disponibles en esta categoría.",
     "Desarrollador Front-end": "Desarrollador Front-end",
     "Tester de Videojuegos": "Tester de videojuegos experimentado",
     "Creador de Experiencias Web": "Bilingüe en español e inglés",
-    "footer-text": "Todos los derechos reservados © 2024",
+    "footer-text": "Todos los derechos reservados 2024",
     "footer-dec": "Desarrollador Front-end y Tester de Videojuegos",
     "footer-link": "Enlaces Rápidos",
     "footer-link-home": "Inicio",
@@ -111,6 +97,7 @@ export const translations = {
     "footer-link-projects": "Proyectos",
     "footer-link-contact": "Contacto",
     "footer-contactme": "Contactame",
+    "email-subject": "Contacto desde Portfolio"
   },
   en: {
     home: "Home",
@@ -150,8 +137,7 @@ export const translations = {
     mobile: "Mobile",
     "cloud-gaming": "Cloud Gaming",
     greeting: "Hi, I'm Nicolas Gonzalez",
-    passion:
-      "Passionate about creating amazing and functional web experiences.",
+    passion: "Passionate about creating amazing and functional web experiences.",
     "about-description": `I am Nicolás González, a passionate Game Quality Analyst and Front-end Developer. My experience ranges from performance optimization in AAA games to creating engaging web experiences.
 
       With a track record in projects such as <i>Suicide Squad: Kill the Justice League</i> and <i>Back 4 Blood</i>, I have honed my skills in rigorous testing and web development. My versatility extends to platforms like PC, Xbox, PlayStation 5, and Nintendo Switch, complemented by a solid knowledge of HTML, CSS, JavaScript, and React Native.
@@ -161,8 +147,7 @@ export const translations = {
     message: "Message",
     send: "Send",
     "email-instructions-title": "Send message",
-    "email-instructions":
-      "You can copy the message or use one of the email clients:",
+    "email-instructions": "You can copy the message or use one of the email clients:",
     to: "To",
     subject: "Subject",
     body: "Message",
@@ -177,53 +162,41 @@ export const translations = {
     "script-projects": "Scripts",
     "game-projects": "Game Projects",
     "view-project": "View Project",
-    "project-1-title": "Project 1 Name",
-    "project-1-description": "Brief description of Project 1...",
-    "project-2-title": "Project 2 Name",
-    "project-2-description": "Brief description of Project 2...",
     "web-project-1-title": "Web e-commerce",
     "web-project-1-description": "First web project, mocking an e-commerce.",
     "web-project-2-title": "Web e-commerce with express",
-    "web-project-2-description":
-      "First web aplication simulating a backend for an e-commerce.",
+    "web-project-2-description": "First web application simulating a backend for an e-commerce.",
     "web-project-3-title": "Gourmet Hub",
-    "web-project-3-description":
-      "Gourmet Hub is a robust, full-stack restaurant management system built with Node.js and Express.",
-      "web-project-4-title": "Movie Organizer - Vue.js" ,
-      "web-project-4-description": "You can add, delete, customize, and manage all your movies in one place with this app, built using HTML, Vue.js, and CSS",
+    "web-project-3-description": "Gourmet Hub is a robust, full-stack restaurant management system built with Node.js and Express.",
+    "web-project-4-title": "Movie Organizer - Vue.js",
+    "web-project-4-description": "You can add, delete, customize, and manage all your movies in one place with this app, built using HTML, Vue.js, and CSS",
     "script-project-1-title": "Discord bot",
-    "script-project-1-description":
-      "My first discord bot, made with Discord.js and Node.js.",
-    "script-project-2-title": "Netflix extention",
-    "script-project-2-description":
-      "A Netflix extention made with HTML, CSS, MongoDB and Node.js.",
+    "script-project-1-description": "My first discord bot, made with Discord.js and Node.js.",
+    "script-project-2-title": "Netflix extension",
+    "script-project-2-description": "A Netflix extension made with HTML, CSS, MongoDB and Node.js.",
     "script-project-3-title": "Aimbot CS2",
     "script-project-3-description": "Aimbot for CS2, made with cheat-engine.",
-    "game-project-1-title": "Rock, papper, scissors game",
-    "game-project-1-description":
-      "Rock, papper, scissors game made with HTML, CSS and Javascript.",
-    "game-project-2-title": "Snake game",
-    "game-project-2-description":
-      "Snake game made with HTML, CSS and Javascript.",
-    "game-project-3-title": "Tic-tac-toe game",
-    "game-project-3-description":
-      "Tic-tac-toe game made with HTML, CSS and Javascript.",
+    "game-project-1-title": "Rock, Paper, Scissors Game",
+    "game-project-1-description": "Rock, Paper, Scissors game made with HTML, CSS and Javascript.",
+    "game-project-2-title": "Snake Game",
+    "game-project-2-description": "Snake game made with HTML, CSS and Javascript.",
+    "game-project-3-title": "Tic Tac Toe",
+    "game-project-3-description": "Tic Tac Toe game made with HTML, CSS and Javascript.",
     "game-project-4-title": "Stopwatch",
-    "game-project-4-description":
-      "Stopwatch made with HTML, CSS and Javascript.",
-    "view-project": "View Project",
+    "game-project-4-description": "Stopwatch made with HTML, CSS and Javascript.",
     "no-projects": "No projects available in this category.",
     "Desarrollador Front-end": "Front-end Developer",
     "Tester de Videojuegos": "Experienced Video Game Tester",
     "Creador de Experiencias Web": "Bilingual in Spanish and English",
-    "footer-text": "All rights reserved © 2024",
+    "footer-text": "All rights reserved 2024",
     "footer-dec": "Front-end Developer and Video Game Tester",
     "footer-link": "Quick Links",
     "footer-link-home": "Home",
-    "footer-link-about": "About me",
+    "footer-link-about": "About",
     "footer-link-skills": "Skills",
     "footer-link-projects": "Projects",
-    "footer-link-contact": "Contact me",
+    "footer-link-contact": "Contact",
     "footer-contactme": "Contact me",
-  },
+    "email-subject": "Contact from Portfolio"
+  }
 };

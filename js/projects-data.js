@@ -1,4 +1,4 @@
-export const projects = {
+const projects = {
   web: [
     {
       id: 1,
@@ -50,7 +50,7 @@ export const projects = {
       description: "script-project-3-description",
       image: "./assets/img/aimbot.png",
       link: "https://github.com/Nicolasgz96/Aimbot-CS2"
-    },
+    }
   ],
   games: [
     {
@@ -80,6 +80,6 @@ export const projects = {
       description: "game-project-4-description",
       image: "./assets/img/stopwatch.png",
       link: "https://github.com/Nicolasgz96/stopwatch"
-    },
+    }
   ]
 };
